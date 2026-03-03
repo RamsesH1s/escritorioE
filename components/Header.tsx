@@ -1,7 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { Gavel, Search, Menu, X } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import dynamicIconImports from 'lucide-react/dynamicIconImports';
+
+const Gavel = dynamic(dynamicIconImports.gavel);
+const Search = dynamic(dynamicIconImports.search);
+const Menu = dynamic(dynamicIconImports.menu);
+const X = dynamic(dynamicIconImports.x);
 import { useState } from 'react';
 import { MAIN_NAVIGATION, OFFICE_INFO } from '@/lib/constants/navigation';
 

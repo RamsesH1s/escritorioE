@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Gavel, MapPin, Phone, Send } from 'lucide-react';
+import { Gavel, MapPin, Phone } from 'lucide-react';
 import { FOOTER_LINKS, OFFICE_INFO } from '@/lib/constants/navigation';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
   return (
@@ -39,16 +40,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h4 className="text-white font-bold uppercase tracking-widest text-sm">Newsletter</h4>
           <p className="text-xs text-slate-400">Subscribe for monthly legal insights and updates.</p>
-          <div className="flex">
-            <input
-              className="bg-slate-800 border-none text-white text-sm px-4 py-2 rounded-l-lg w-full focus:ring-1 focus:ring-accent outline-none"
-              placeholder="Email Address"
-              type="email"
-            />
-            <button className="bg-accent text-slate-900 px-4 py-2 rounded-r-lg hover:bg-yellow-600 transition-colors">
-              <Send className="w-5 h-5" />
-            </button>
-          </div>
+          <NewsletterForm variant="footer" />
         </div>
       </div>
       <div className="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">

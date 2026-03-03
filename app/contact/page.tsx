@@ -1,7 +1,45 @@
+'use client';
+
 import Image from 'next/image';
 import { MapPin, Phone, Mail, MessageCircle, ExternalLink, Navigation } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus('error');
+      setStatusMessage('Please fill all required fields.');
+      return;
+    }
+
+    setStatus('loading');
+    try {
+      const response = await fetch('/backend-api/api/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setStatusMessage(data.message || 'Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+        setStatusMessage(data.message || 'Failed to send message.');
+      }
+    } catch (error) {
+      setStatus('error');
+      setStatusMessage('Network error. Please try again later.');
+    }
+  };
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -25,22 +63,28 @@ export default function Contact() {
           {/* Left Column: Form */}
           <div className="lg:col-span-7 bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
             <h3 className="text-xl font-bold mb-8 text-slate-900 dark:text-white font-serif">Send us a message</h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name</label>
+                  <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name *</label>
                   <input
                     className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400"
                     placeholder="John Doe"
                     type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+                  <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address *</label>
                   <input
                     className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400"
                     placeholder="john@example.com"
                     type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
               </div>
@@ -50,21 +94,34 @@ export default function Contact() {
                   className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400"
                   placeholder="Legal Inquiry - Corporate Law"
                   type="text"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Message</label>
+                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Message *</label>
                 <textarea
                   className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400 resize-none"
                   placeholder="How can we help you?"
                   rows={6}
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 ></textarea>
               </div>
+
+              {status !== 'idle' && (
+                <div className={`p-4 rounded-lg text-sm font-semibold ${status === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400' : 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'}`}>
+                  {statusMessage}
+                </div>
+              )}
+
               <button
-                className="w-full md:w-auto bg-primary text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 shadow-lg shadow-primary/20 transition-all"
-                type="button"
+                className="w-full md:w-auto bg-primary text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 shadow-lg shadow-primary/20 transition-all disabled:opacity-50"
+                type="submit"
+                disabled={status === 'loading'}
               >
-                Send Inquiry
+                {status === 'loading' ? 'Sending...' : 'Send Inquiry'}
               </button>
             </form>
           </div>

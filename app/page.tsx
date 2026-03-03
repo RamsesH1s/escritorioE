@@ -1,6 +1,8 @@
 import HeroSection from '@/components/HeroSection';
-import PillarsSection from '@/components/PillarsSection';
-import PracticeAreasSection from '@/components/PracticeAreasSection';
+import dynamic from 'next/dynamic';
+
+const PillarsSection = dynamic(() => import('@/components/PillarsSection'));
+const PracticeAreasSection = dynamic(() => import('@/components/PracticeAreasSection'));
 
 export default function Home() {
   return (

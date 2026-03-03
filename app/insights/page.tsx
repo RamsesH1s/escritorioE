@@ -1,8 +1,62 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight, ChevronLeft, User, Calendar, ArrowRight } from 'lucide-react';
+import NewsletterForm from '@/components/NewsletterForm';
 
-export default function Insights() {
+export default async function Insights() {
+  let articles = [];
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_PHP_API_URL || 'http://localhost/backend-api';
+    const res = await fetch(`${apiUrl}/api/insights.php`, {
+      next: { revalidate: 3600 } // ISR cache (1 hour)
+    });
+    if (res.ok) {
+      const json = await res.json();
+      articles = json.data || [];
+    }
+  } catch (e) {
+    // PHP API not reachable, falling back to static data silently.
+  }
+
+  // Backup static data for local dev without PHP server
+  if (articles.length === 0) {
+    articles = [
+      {
+        id: 1,
+        title: "Impact of Remote Witness Testimony on Civil Trials",
+        slug: "impact-of-remote-witness-testimony-on-civil-trials",
+        summary: "As judicial systems adapt to hybrid models, we explore the legal precedents being set regarding digital evidence and remote cross-examinations.",
+        cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBTAwqQGX3C6kVWJgD-Pdmf8spUd4hOxeopNUv2HLWJicul1xxIQAYuGIDdjQiu2EEXs3mw0ZhIOcmsjLaYmZwaekd-L42sqFhWHfBwnZ4qRe9jTsDlsrfVsZuKu-xUHQJ7V2fDO4JipLxvd1F-BAWx-ZjArr8Fh6q5O_fNoINoNb7gkcZl2xhbPdLI_CAO9cWZciaksrbH8JFTVMahuTWVzn1--Wj4AnUN5eJeErBcaeXojbndUhjpYUQYOpkjPWJKS-BEai4oaRY",
+        category: { name: "Litigation" },
+        estimated_read_time: 12,
+        author: { name: "Sarah Thorne" },
+        published_at: "2023-10-18"
+      },
+      {
+        id: 2,
+        title: "AI and Copyright Law: The New Frontier of Ownership",
+        slug: "ai-and-copyright-law",
+        summary: "Analyzing recent court rulings on AI-generated content and what creative agencies need to know about protecting their assets.",
+        cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJoxSLJFFsbkGEt7rJzurFnjs27McEGt024sJiIOWTCw_KbmdzO07U7qolQ2jNtpZsPs9PLILGpNFBhhq66mOvi58qIm1YO6NJS5DWzUxclVXCzwwwvGL4dOZ3blkWQ5V-rOFxVHt5Zz4lIp3sbqcs6TZE8GUWF5arGPrRCMb9i74_qrVd8RkD6pvdUTRmNvsOdjEYKqr1EU8H-1CHpl8Owi9kzwP9feVjuX2oo17-b3LmBrHZS9OgHeATQyVrX7augXhGx0lcZDU",
+        category: { name: "Intellectual Property" },
+        estimated_read_time: 8,
+        author: { name: "James Miller" },
+        published_at: "2023-10-15"
+      },
+      {
+        id: 3,
+        title: "Navigating New Non-Compete Clauses",
+        slug: "navigating-new-non-compete-clauses",
+        summary: "A comprehensive guide for HR departments on the recent federal ban on non-compete agreements and alternative protection methods.",
+        cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjLsDdWo2_dGnv7vkArzFCp_npk_ayShEmuTkjQc4VORrGO9SbWnzKv7SxCqVYlsGVKfRSqKZhQvfez7oNETL43tvuIiCU_NRPgpgXlGajuAnMHE8ZPXNQDN6qBKSl1bTnyK_8iAlDpMJCNVPSBaHcbhFHFLhNTT5e5XrcW5jCLBQjTXplyNXxOQsgyafrl1o63RHHwpGGutcBJGp45xRXOdcLey977VptJNmS59zYMUgsoNbifJJ1gwW1H2ykZZBfdKQjXPDKL9c",
+        category: { name: "Employment Law" },
+        estimated_read_time: 15,
+        author: { name: "Robert Chen" },
+        published_at: "2023-10-10"
+      }
+    ];
+  }
+
   return (
     <div className="flex flex-col">
       {/* Breadcrumbs & Header */}
@@ -55,96 +109,43 @@ export default function Insights() {
           {/* Blog Posts List */}
           <div className="lg:col-span-8 space-y-12">
             <h4 className="text-2xl font-bold border-b border-slate-200 dark:border-slate-800 pb-4 font-serif">Recent Publications</h4>
-            
-            {/* Article 1 */}
-            <article className="flex flex-col md:flex-row gap-8 group">
-              <div className="md:w-1/3 shrink-0">
-                <div className="overflow-hidden rounded-xl aspect-[4/3] relative">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTAwqQGX3C6kVWJgD-Pdmf8spUd4hOxeopNUv2HLWJicul1xxIQAYuGIDdjQiu2EEXs3mw0ZhIOcmsjLaYmZwaekd-L42sqFhWHfBwnZ4qRe9jTsDlsrfVsZuKu-xUHQJ7V2fDO4JipLxvd1F-BAWx-ZjArr8Fh6q5O_fNoINoNb7gkcZl2xhbPdLI_CAO9cWZciaksrbH8JFTVMahuTWVzn1--Wj4AnUN5eJeErBcaeXojbndUhjpYUQYOpkjPWJKS-BEai4oaRY"
-                    alt="Professional judge gavel on wooden desk"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col justify-center">
-                <div className="flex items-center gap-3 text-xs font-bold text-primary uppercase mb-3 tracking-widest">
-                  <span>Litigation</span>
-                  <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-                  <span className="text-slate-500">12 Min Read</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer font-serif">Impact of Remote Witness Testimony on Civil Trials</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-                  As judicial systems adapt to hybrid models, we explore the legal precedents being set regarding digital evidence and remote cross-examinations.
-                </p>
-                <div className="flex items-center gap-4 text-slate-500 text-xs">
-                  <span className="font-medium">By Sarah Thorne</span>
-                  <span>Oct 18, 2023</span>
-                </div>
-              </div>
-            </article>
 
-            {/* Article 2 */}
-            <article className="flex flex-col md:flex-row gap-8 group">
-              <div className="md:w-1/3 shrink-0">
-                <div className="overflow-hidden rounded-xl aspect-[4/3] relative">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJoxSLJFFsbkGEt7rJzurFnjs27McEGt024sJiIOWTCw_KbmdzO07U7qolQ2jNtpZsPs9PLILGpNFBhhq66mOvi58qIm1YO6NJS5DWzUxclVXCzwwwvGL4dOZ3blkWQ5V-rOFxVHt5Zz4lIp3sbqcs6TZE8GUWF5arGPrRCMb9i74_qrVd8RkD6pvdUTRmNvsOdjEYKqr1EU8H-1CHpl8Owi9kzwP9feVjuX2oo17-b3LmBrHZS9OgHeATQyVrX7augXhGx0lcZDU"
-                    alt="Person signing legal contract documents"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
+            {articles.map((article: any) => (
+              <article key={article.id} className="flex flex-col md:flex-row gap-8 group">
+                <div className="md:w-1/3 shrink-0">
+                  <div className="overflow-hidden rounded-xl aspect-[4/3] relative">
+                    {article.cover_image_url && (
+                      <Image
+                        src={article.cover_image_url}
+                        alt={article.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        referrerPolicy="no-referrer"
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-col justify-center">
-                <div className="flex items-center gap-3 text-xs font-bold text-primary uppercase mb-3 tracking-widest">
-                  <span>Intellectual Property</span>
-                  <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-                  <span className="text-slate-500">8 Min Read</span>
+                <div className="flex flex-col justify-center">
+                  <div className="flex items-center gap-3 text-xs font-bold text-primary uppercase mb-3 tracking-widest">
+                    <span>{article.category?.name || 'Uncategorized'}</span>
+                    <span className="w-1 h-1 rounded-full bg-slate-300"></span>
+                    <span className="text-slate-500">{article.estimated_read_time} Min Read</span>
+                  </div>
+                  <Link href={`/insights/${article.slug}`}>
+                    <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer font-serif">
+                      {article.title}
+                    </h3>
+                  </Link>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
+                    {article.summary}
+                  </p>
+                  <div className="flex items-center gap-4 text-slate-500 text-xs">
+                    <span className="font-medium">By {article.author?.name || 'Editorial Team'}</span>
+                    <span>{article.published_at ? new Date(article.published_at).toLocaleDateString() : ''}</span>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer font-serif">AI and Copyright Law: The New Frontier of Ownership</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-                  Analyzing recent court rulings on AI-generated content and what creative agencies need to know about protecting their assets.
-                </p>
-                <div className="flex items-center gap-4 text-slate-500 text-xs">
-                  <span className="font-medium">By James Miller</span>
-                  <span>Oct 15, 2023</span>
-                </div>
-              </div>
-            </article>
-
-            {/* Article 3 */}
-            <article className="flex flex-col md:flex-row gap-8 group">
-              <div className="md:w-1/3 shrink-0">
-                <div className="overflow-hidden rounded-xl aspect-[4/3] relative">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjLsDdWo2_dGnv7vkArzFCp_npk_ayShEmuTkjQc4VORrGO9SbWnzKv7SxCqVYlsGVKfRSqKZhQvfez7oNETL43tvuIiCU_NRPgpgXlGajuAnMHE8ZPXNQDN6qBKSl1bTnyK_8iAlDpMJCNVPSBaHcbhFHFLhNTT5e5XrcW5jCLBQjTXplyNXxOQsgyafrl1o63RHHwpGGutcBJGp45xRXOdcLey977VptJNmS59zYMUgsoNbifJJ1gwW1H2ykZZBfdKQjXPDKL9c"
-                    alt="Two professionals shaking hands in office"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col justify-center">
-                <div className="flex items-center gap-3 text-xs font-bold text-primary uppercase mb-3 tracking-widest">
-                  <span>Employment Law</span>
-                  <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-                  <span className="text-slate-500">15 Min Read</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer font-serif">Navigating New Non-Compete Clauses</h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-                  A comprehensive guide for HR departments on the recent federal ban on non-compete agreements and alternative protection methods.
-                </p>
-                <div className="flex items-center gap-4 text-slate-500 text-xs">
-                  <span className="font-medium">By Robert Chen</span>
-                  <span>Oct 10, 2023</span>
-                </div>
-              </div>
-            </article>
+              </article>
+            ))}
 
             {/* Pagination */}
             <div className="flex items-center justify-center pt-8">
@@ -172,19 +173,7 @@ export default function Insights() {
               <p className="text-slate-600 dark:text-slate-400 text-sm mb-6">
                 Receive weekly legal analysis and firm news directly in your inbox.
               </p>
-              <form className="space-y-3">
-                <input
-                  className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary transition-all outline-none"
-                  placeholder="Email address"
-                  type="email"
-                />
-                <button
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-lg text-sm transition-all"
-                  type="button"
-                >
-                  Subscribe Now
-                </button>
-              </form>
+              <NewsletterForm variant="sidebar" />
               <p className="mt-4 text-[10px] text-slate-400 text-center uppercase tracking-widest leading-relaxed">
                 By subscribing, you agree to our Privacy Policy.
               </p>
