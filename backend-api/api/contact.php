@@ -1,15 +1,7 @@
 <?php
 // backend-api/api/contact.php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
+include_once '../config/core.php';
+set_api_headers('POST');
 
 include_once '../config/database.php';
 
@@ -20,6 +12,11 @@ $db = $database->getConnection();
 $data = json_decode(file_get_contents("php://input"));
 
 if (!empty($data->name) && !empty($data->email) && !empty($data->message)) {
+    if (!filter_var($data->email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400);
+        echo json_encode(["message" => "Formato de e-mail inválido."]);
+        exit();
+    }
 
     try {
         $query = "INSERT INTO contacts SET name=:name, email=:email, phone=:phone, message=:message";
@@ -47,8 +44,9 @@ if (!empty($data->name) && !empty($data->email) && !empty($data->message)) {
         }
     }
     catch (PDOException $e) {
+        error_log("Database Error in contact.php: " . $e->getMessage());
         http_response_code(500);
-        echo json_encode(["message" => "System error.", "error" => $e->getMessage()]);
+        echo json_encode(["message" => "Ocorreu um erro interno de servidor. Tente novamente mais tarde."]);
     }
 }
 else {

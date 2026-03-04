@@ -1,15 +1,7 @@
 <?php
 // backend-api/api/newsletter.php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
+include_once '../config/core.php';
+set_api_headers('POST');
 
 include_once '../config/database.php';
 
@@ -48,8 +40,9 @@ if (!empty($data->email) && filter_var($data->email, FILTER_VALIDATE_EMAIL)) {
         }
     }
     catch (PDOException $e) {
+        error_log("Database Error in newsletter.php: " . $e->getMessage());
         http_response_code(500);
-        echo json_encode(["message" => "System error.", "error" => $e->getMessage()]);
+        echo json_encode(["message" => "Ocorreu um erro interno de servidor. Tente novamente mais tarde."]);
     }
 }
 else {
