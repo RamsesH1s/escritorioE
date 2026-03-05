@@ -24,7 +24,7 @@ export default function About() {
             A Tradition of <span className="text-accent italic">Excellence</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
-            For over three decades, LegalExcellence has stood as a beacon of integrity, providing unparalleled legal counsel to individuals and corporations worldwide.
+            For over three decades, Dayra Oliveira has stood as a beacon of integrity, providing unparalleled legal counsel to individuals and corporations worldwide.
           </p>
         </div>
       </section>

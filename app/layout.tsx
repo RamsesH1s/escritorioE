@@ -15,28 +15,28 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'LegalExcellence | Premium Law Firm',
-  description: 'Premium legal services with a focus on integrity, excellence, and the relentless pursuit of justice. Expert counsel in Corporate Law, Family Litigation, and Real Estate.',
+  title: 'Dayra Oliveira | Advogada e Consultora Jurídica',
+  description: 'Serviços jurídicos premium com foco em integridade, excelência e a busca incansável pela justiça para nossos clientes.',
   openGraph: {
-    title: 'LegalExcellence | Premium Law Firm',
-    description: 'Premium legal services with a focus on integrity, excellence, and the relentless pursuit of justice.',
-    url: 'https://legalexcellence.com', // To be updated when hosted
-    siteName: 'LegalExcellence',
+    title: 'Dayra Oliveira | Advogada e Consultora Jurídica',
+    description: 'Serviços jurídicos premium com foco em integridade, excellence e a busca incansável pela justiça.',
+    url: 'https://dayraoliveira.com', // To be updated when hosted
+    siteName: 'Dayra Oliveira',
     images: [
       {
         url: '/images/hero.jpg',
         width: 1200,
         height: 630,
-        alt: 'LegalExcellence Library',
+        alt: 'Dayra Oliveira Office',
       },
     ],
-    locale: 'en_US',
+    locale: 'pt_BR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LegalExcellence | Premium Law Firm',
-    description: 'Premium legal services with a focus on integrity, excellence, and the relentless pursuit of justice.',
+    title: 'Dayra Oliveira | Advogada e Consultora Jurídica',
+    description: 'Serviços jurídicos premium com foco em integridade, excelência e a busca incansável pela justiça.',
     images: ['/images/hero.jpg'],
   },
 };
@@ -45,9 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    name: 'LegalExcellence',
-    image: 'https://legalexcellence.com/images/hero.jpg',
-    url: 'https://legalexcellence.com',
+    name: 'Dayra Oliveira',
+    image: 'https://dayraoliveira.com/images/hero.jpg',
+    url: 'https://dayraoliveira.com',
     telephone: '+1-212-555-0198',
     address: {
       '@type': 'PostalAddress',

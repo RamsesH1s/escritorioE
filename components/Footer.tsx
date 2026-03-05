@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Gavel, MapPin, Phone } from 'lucide-react';
 import { FOOTER_LINKS, OFFICE_INFO } from '@/lib/constants/navigation';
 import NewsletterForm from './NewsletterForm';
@@ -8,10 +9,14 @@ export default function Footer() {
     <footer className="bg-slate-900 text-slate-300 py-16 px-10 border-t border-slate-800">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
-          <div className="flex items-center gap-3 text-white">
-            <Gavel className="w-6 h-6 text-primary" />
-            <h2 className="text-xl font-bold font-serif uppercase tracking-widest">{OFFICE_INFO.name}</h2>
-          </div>
+          <Link href="/" className="block relative w-44 h-14 md:w-52 md:h-16" aria-label="Dayra Oliveira">
+            <Image
+              src="/images/logo.png"
+              alt="Dayra Oliveira Advogada e Consultora Jurídica Logo"
+              fill
+              className="object-contain object-left invert brightness-0"
+            />
+          </Link>
           <p className="text-sm leading-relaxed text-slate-400 mt-2">
             {OFFICE_INFO.description}
           </p>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 
@@ -17,11 +18,16 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-10 py-4 bg-white dark:bg-background-dark sticky top-0 z-50">
       <div className="flex items-center gap-12">
-        <Link href="/" className="flex items-center gap-3 text-primary dark:text-blue-400">
-          <Gavel className="w-8 h-8" />
-          <h2 className="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight font-serif uppercase tracking-widest">
-            {OFFICE_INFO.name}
-          </h2>
+        <Link href="/" className="flex flex-col gap-0.5" aria-label="Dayra Oliveira">
+          <div className="relative w-48 h-16 md:w-56 md:h-20">
+            <Image
+              src="/images/logo.png"
+              alt="Dayra Oliveira Advogada e Consultora Jurídica Logo"
+              fill
+              className="object-contain object-left"
+              priority
+            />
+          </div>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {MAIN_NAVIGATION.map((item) => (

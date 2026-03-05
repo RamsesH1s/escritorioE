@@ -2,10 +2,10 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-primary: #1152d4;
-  --color-accent: #C5A059;
+  --color-primary: #4B4F3D;
+  --color-accent: #E0DAC5;
   --color-background-light: #f6f6f8;
-  --color-background-dark: #101622;
+  --color-background-dark: #2F3226;
   --font-display: var(--font-public-sans), sans-serif;
   --font-serif: var(--font-playfair-display), serif;
 }

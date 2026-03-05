@@ -7,8 +7,9 @@ export const MAIN_NAVIGATION = [
 ];
 
 export const OFFICE_INFO = {
-    name: 'LegalExcellence',
-    description: 'Premium legal services with a focus on integrity, excellence, and the relentless pursuit of justice for our clients.',
+    name: 'Dayra Oliveira',
+    subtitle: 'Advogada e Consultora Jurídica',
+    description: 'Serviços jurídicos premium com foco em integridade, excelência e a busca incansável pela justiça para nossos clientes.',
     address: {
         street: '123 Legal Plaza, Suite 400',
         city: 'New York',
@@ -17,7 +18,7 @@ export const OFFICE_INFO = {
         fullHTML: '123 Legal Plaza, Suite 400<br />New York, NY 10001'
     },
     phone: '(212) 555-0198',
-    email: 'contact@legalexcellence.com'
+    email: 'contato@dayraoliveira.com'
 };
 
 export const FOOTER_LINKS = {
