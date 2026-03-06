@@ -24,7 +24,7 @@ export default function Header() {
               src="/images/logo.png"
               alt="Dayra Oliveira Advogada e Consultora Jurídica Logo"
               fill
-              className="object-contain object-left"
+              className="object-contain object-left brightness-0 invert"
               priority
             />
           </div>
@@ -42,11 +42,11 @@ export default function Header() {
           <Search className="w-5 h-5 text-slate-500" />
           <input
             className="bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500 w-40 ml-2 outline-none"
-            placeholder="Search legal insights..."
+            placeholder="Buscar artigos..."
           />
         </div>
         <button className="hidden sm:flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/20 transition-all">
-          <span>Book Consultation</span>
+          <span>Agendar Consulta</span>
         </button>
         <button
           className="md:hidden p-2 text-slate-700 dark:text-slate-300"
@@ -68,11 +68,11 @@ export default function Header() {
             <Search className="w-5 h-5 text-slate-500" />
             <input
               className="bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500 w-full ml-2 outline-none"
-              placeholder="Search legal insights..."
+              placeholder="Buscar artigos..."
             />
           </div>
           <button className="w-full mt-2 cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/20 transition-all">
-            <span>Book Consultation</span>
+            <span>Agendar Consulta</span>
           </button>
         </div>
       )}

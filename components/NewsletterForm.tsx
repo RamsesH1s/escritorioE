@@ -24,15 +24,15 @@ export default function NewsletterForm({ variant = 'footer' }: { variant?: 'foot
 
             if (response.ok) {
                 setStatus('success');
-                setMessage(data.message || 'Subscribed!');
+                setMessage(data.message || 'Inscrito com sucesso!');
                 setEmail('');
             } else {
                 setStatus('error');
-                setMessage(data.message || 'Subscription failed.');
+                setMessage(data.message || 'Falha na inscrição.');
             }
         } catch (error) {
             setStatus('error');
-            setMessage('Network error.');
+            setMessage('Erro de rede.');
         }
     };
 
@@ -41,7 +41,7 @@ export default function NewsletterForm({ variant = 'footer' }: { variant?: 'foot
             <form className="space-y-3" onSubmit={handleSubmit}>
                 <input
                     className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary transition-all outline-none"
-                    placeholder="Email address"
+                    placeholder="Endereço de e-mail"
                     type="email"
                     required
                     value={email}
@@ -52,7 +52,7 @@ export default function NewsletterForm({ variant = 'footer' }: { variant?: 'foot
                     type="submit"
                     disabled={status === 'loading'}
                 >
-                    {status === 'loading' ? 'Subscribing...' : 'Subscribe Now'}
+                    {status === 'loading' ? 'Inscrevendo...' : 'Inscreva-se Agora'}
                 </button>
                 {status !== 'idle' && (
                     <p className={`text-xs mt-2 text-center ${status === 'error' ? 'text-red-500' : 'text-green-500'}`}>
@@ -69,7 +69,7 @@ export default function NewsletterForm({ variant = 'footer' }: { variant?: 'foot
             <form className="flex" onSubmit={handleSubmit}>
                 <input
                     className="bg-slate-800 border-none text-white text-sm px-4 py-2 rounded-l-lg w-full focus:ring-1 focus:ring-accent outline-none"
-                    placeholder="Email Address"
+                    placeholder="Endereço de E-mail"
                     type="email"
                     required
                     value={email}

@@ -19,10 +19,10 @@ export default function Practices() {
           />
         </div>
         <div className="container mx-auto px-4 relative z-20 text-center">
-          <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Our Expertise</span>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight font-serif">Areas of Practice</h2>
+          <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Nossa Especialidade</span>
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight font-serif">Áreas de Atuação</h2>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            Providing comprehensive legal solutions across multiple disciplines with a commitment to excellence, integrity, and tradition.
+            Fornecendo soluções jurídicas abrangentes em múltiplas disciplinas com compromisso de excelência, integridade e tradição.
           </p>
         </div>
       </section>
@@ -36,23 +36,23 @@ export default function Practices() {
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Gavel className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Civil Law</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Civil</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Expert litigation and dispute resolution for individuals and businesses. We handle complex contractual disputes, property law, and tort claims.
+                Especialistas em litígios e resolução de disputas. Lidamos com contratos complexos, direito de propriedade e responsabilidade civil.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Breach of Contract
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Quebra de Contrato
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Personal Injury Claims
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Danos Pessoais
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Property Disputes
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Disputas de Propriedade
                 </li>
               </ul>
               <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                LEARN MORE <ArrowRight className="w-4 h-4 ml-1" />
+                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -61,23 +61,23 @@ export default function Practices() {
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Briefcase className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Corporate Law</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Societário</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Comprehensive counsel on mergers, acquisitions, and corporate governance. Supporting your business through every stage of growth.
+                Assessoria completa em fusões, aquisições e governança corporativa. Apoiando seu negócio em todas as fases de crescimento.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> M&A Transactions
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Transações M&A
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
                   <CheckCircle2 className="w-4 h-4 text-accent" /> Venture Capital
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Compliance & Risk
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Compliance e Riscos
                 </li>
               </ul>
               <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                LEARN MORE <ArrowRight className="w-4 h-4 ml-1" />
+                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -86,23 +86,23 @@ export default function Practices() {
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Users className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Labor Law</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Trabalhista</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Protecting employer and employee rights. Specialized in employment contracts, workplace discrimination, and labor union negotiations.
+                Protegendo os direitos de empregadores e empregados. Especializados em contratos, discriminação e negociações sindicais.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Workplace Safety
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Segurança no Trabalho
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Wrongful Termination
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Rescisões Indevidas
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Compensation Audits
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Auditorias de Remuneração
                 </li>
               </ul>
               <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                LEARN MORE <ArrowRight className="w-4 h-4 ml-1" />
+                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -111,23 +111,23 @@ export default function Practices() {
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Heart className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Family Law</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito de Família</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Compassionate guidance through divorce, custody, and estate planning. We prioritize the well-being of your family during difficult transitions.
+                Orientação compassiva em divórcios, guarda e planejamento sucessório. Priorizamos o bem-estar de sua família.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Divorce Mediation
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Mediação de Divórcio
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Child Custody
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Guarda de Menores
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Wills & Trusts
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Testamentos e Fundos
                 </li>
               </ul>
               <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                LEARN MORE <ArrowRight className="w-4 h-4 ml-1" />
+                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -136,23 +136,23 @@ export default function Practices() {
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Shield className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Criminal Law</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Penal</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Dedicated defense and representation in high-stakes criminal matters. Protecting your rights and ensuring a fair legal process.
+                Defesa e representação em questões criminais de alto risco. Protegendo seus direitos e garantindo um processo justo.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> White Collar Defense
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Defesa de Colarinho Branco
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Felony Representation
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Representação em Crimes Graves
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Appeals & Petitions
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Recursos e Petições
                 </li>
               </ul>
               <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                LEARN MORE <ArrowRight className="w-4 h-4 ml-1" />
+                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -161,23 +161,23 @@ export default function Practices() {
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Landmark className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Tax Law</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Tributário</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Strategic tax planning and resolution for complex financial structures. Minimizing liability while ensuring full legal compliance.
+                Planejamento estratégico e resolução para estruturas financeiras complexas. Minimizando riscos mantendo a conformidade total.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> International Tax
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Tributação Internacional
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Estate Tax Planning
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Planejamento Tributário Imobiliário
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> IRS Controversy
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Controvérsias Fiscais
                 </li>
               </ul>
               <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                LEARN MORE <ArrowRight className="w-4 h-4 ml-1" />
+                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
           </div>
@@ -188,16 +188,16 @@ export default function Practices() {
       <section className="py-20 bg-background-light dark:bg-slate-900/80">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto bg-white dark:bg-background-dark p-12 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Need Legal Consultation?</h2>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Precisa de Consulta Jurídica?</h2>
             <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-              Our team of experienced attorneys is ready to review your case and provide the strategic counsel you deserve. Contact us today to schedule your confidential consultation.
+              Nossa equipe experiente de advogados está pronta para analisar seu caso e fornecer o conselho estratégico que você merece. Contate-nos hoje mesmo.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
-                Book a Consultation
+                Agendar Reunião
               </button>
               <button className="w-full sm:w-auto border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
-                View Case Results
+                Ver Resultados
               </button>
             </div>
           </div>

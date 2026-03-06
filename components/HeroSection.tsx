@@ -19,17 +19,17 @@ export default function HeroSection() {
         <div className="relative z-10 max-w-[900px] flex flex-col items-center gap-8">
           <div className="w-20 h-1 bg-accent mb-2"></div>
           <h1 className="text-white text-5xl md:text-7xl font-serif font-bold leading-[1.1] tracking-tight">
-            Excellence in <span className="text-accent italic">Legal Solutions</span>
+            Excelência em <span className="text-accent italic">Soluções Jurídicas</span>
           </h1>
           <p className="text-slate-200 text-lg md:text-xl font-normal leading-relaxed max-w-2xl font-display">
-            Providing sophisticated and reliable legal counsel with an unwavering commitment to integrity, precision, and exceptional results.
+            Aconselhamento jurídico sofisticado e confiável com um compromisso inabalável com a integridade, precisão e resultados excepcionais.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <Link href="/contact" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold uppercase tracking-widest transition-all">
-              Schedule a Call
+              Agende uma Reunião
             </Link>
             <Link href="/practices" className="flex min-w-[220px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-white/10 hover:bg-white/20 text-white border border-white/30 text-base font-bold uppercase tracking-widest backdrop-blur-sm transition-all">
-              Our Practice Areas
+              Áreas de Atuação
             </Link>
           </div>
         </div>

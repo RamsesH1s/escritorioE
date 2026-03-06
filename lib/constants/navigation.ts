@@ -1,9 +1,9 @@
 export const MAIN_NAVIGATION = [
-    { label: 'Home', href: '/' },
-    { label: 'Areas of Practice', href: '/practices' },
-    { label: 'About Us', href: '/about' },
-    { label: 'Insights', href: '/insights' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Início', href: '/' },
+    { label: 'Áreas de Atuação', href: '/practices' },
+    { label: 'Sobre Nós', href: '/about' },
+    { label: 'Artigos', href: '/insights' },
+    { label: 'Contato', href: '/contact' },
 ];
 
 export const OFFICE_INFO = {
@@ -23,13 +23,13 @@ export const OFFICE_INFO = {
 
 export const FOOTER_LINKS = {
     quickLinks: [
-        { label: 'Our Firm', href: '/about' },
-        { label: 'Practices', href: '/practices' },
-        { label: 'Insights', href: '/insights' },
-        { label: 'Contact Us', href: '/contact' },
+        { label: 'Nosso Escritório', href: '/about' },
+        { label: 'Áreas de Atuação', href: '/practices' },
+        { label: 'Artigos', href: '/insights' },
+        { label: 'Fale Conosco', href: '/contact' },
     ],
     legal: [
-        { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Service', href: '/terms' },
+        { label: 'Política de Privacidade', href: '/privacy' },
+        { label: 'Termos de Serviço', href: '/terms' },
     ]
 };

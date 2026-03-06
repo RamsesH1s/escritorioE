@@ -62,14 +62,14 @@ export default async function Insights() {
       {/* Breadcrumbs & Header */}
       <section className="max-w-7xl mx-auto px-6 pt-10 pb-12 w-full">
         <div className="flex items-center gap-2 text-slate-500 text-sm mb-6">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <Link href="/" className="hover:text-primary transition-colors">Início</Link>
           <ChevronRight className="w-4 h-4" />
-          <span className="text-slate-900 dark:text-slate-100 font-medium">Insights</span>
+          <span className="text-slate-900 dark:text-slate-100 font-medium">Artigos</span>
         </div>
         <div className="max-w-3xl">
-          <h2 className="text-5xl font-black mb-4 tracking-tight font-serif">Legal Insights & Perspectives</h2>
+          <h2 className="text-5xl font-black mb-4 tracking-tight font-serif">Artigos e Perspectivas Jurídicas</h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            Stay informed with expert analysis on legislative changes, regulatory updates, and evolving corporate law landscapes.
+            Mantenha-se informado com análises de especialistas sobre mudanças legislativas, atualizações regulatórias e cenários em evolução no direito.
           </p>
         </div>
       </section>
@@ -86,9 +86,9 @@ export default async function Insights() {
             referrerPolicy="no-referrer"
           />
           <div className="absolute bottom-0 left-0 p-10 z-20 max-w-4xl">
-            <span className="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded mb-4 uppercase tracking-widest">Corporate Law</span>
-            <h3 className="text-4xl font-bold text-white mb-4 leading-tight group-hover:underline font-serif cursor-pointer">Navigating New Corporate Governance Regulations in 2024</h3>
-            <p className="text-slate-200 text-lg mb-6 line-clamp-2">Our senior partners dissect the implications of the recent legislative shifts and what they mean for your business operations and compliance strategies.</p>
+            <span className="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded mb-4 uppercase tracking-widest">Direito Societário</span>
+            <h3 className="text-4xl font-bold text-white mb-4 leading-tight group-hover:underline font-serif cursor-pointer">Navegando nas Novas Regras de Governança Corporativa em 2024</h3>
+            <p className="text-slate-200 text-lg mb-6 line-clamp-2">Nossos sócios seniores dissecam as implicações das recentes mudanças legislativas e o que elas significam para as operações do seu negócio e estratégias de compliance.</p>
             <div className="flex items-center gap-4 text-slate-300 text-sm">
               <span className="flex items-center gap-1.5 font-medium">
                 <User className="w-4 h-4" />
@@ -96,7 +96,7 @@ export default async function Insights() {
               </span>
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />
-                October 24, 2023
+                Outubro 24, 2023
               </span>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default async function Insights() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Blog Posts List */}
           <div className="lg:col-span-8 space-y-12">
-            <h4 className="text-2xl font-bold border-b border-slate-200 dark:border-slate-800 pb-4 font-serif">Recent Publications</h4>
+            <h4 className="text-2xl font-bold border-b border-slate-200 dark:border-slate-800 pb-4 font-serif">Publicações Recentes</h4>
 
             {articles.map((article: any) => (
               <article key={article.id} className="flex flex-col md:flex-row gap-8 group">
@@ -127,9 +127,9 @@ export default async function Insights() {
                 </div>
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-3 text-xs font-bold text-primary uppercase mb-3 tracking-widest">
-                    <span>{article.category?.name || 'Uncategorized'}</span>
+                    <span>{article.category?.name || 'Geral'}</span>
                     <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-                    <span className="text-slate-500">{article.estimated_read_time} Min Read</span>
+                    <span className="text-slate-500">{article.estimated_read_time} Min de Leitura</span>
                   </div>
                   <Link href={`/insights/${article.slug}`}>
                     <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer font-serif">
@@ -140,7 +140,7 @@ export default async function Insights() {
                     {article.summary}
                   </p>
                   <div className="flex items-center gap-4 text-slate-500 text-xs">
-                    <span className="font-medium">By {article.author?.name || 'Editorial Team'}</span>
+                    <span className="font-medium">Por {article.author?.name || 'Equipe Editorial'}</span>
                     <span>{article.published_at ? new Date(article.published_at).toLocaleDateString() : ''}</span>
                   </div>
                 </div>
@@ -169,32 +169,32 @@ export default async function Insights() {
           <aside className="lg:col-span-4 space-y-10">
             {/* Newsletter Signup */}
             <div className="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20">
-              <h4 className="text-xl font-bold mb-4 font-serif">Briefings for Professionals</h4>
+              <h4 className="text-xl font-bold mb-4 font-serif">Resumos para Profissionais</h4>
               <p className="text-slate-600 dark:text-slate-400 text-sm mb-6">
-                Receive weekly legal analysis and firm news directly in your inbox.
+                Receba análises jurídicas semanais e notícias do escritório diretamente na sua caixa de entrada.
               </p>
               <NewsletterForm variant="sidebar" />
               <p className="mt-4 text-[10px] text-slate-400 text-center uppercase tracking-widest leading-relaxed">
-                By subscribing, you agree to our Privacy Policy.
+                Ao assinar, você concorda com nossa Política de Privacidade.
               </p>
             </div>
 
             {/* Categories */}
             <div>
-              <h4 className="text-lg font-bold border-b border-slate-200 dark:border-slate-800 pb-3 mb-4 font-serif">Practices</h4>
+              <h4 className="text-lg font-bold border-b border-slate-200 dark:border-slate-800 pb-3 mb-4 font-serif">Áreas</h4>
               <ul className="space-y-1">
-                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Corporate & Commercial <span className="text-slate-400 font-normal">(12)</span></Link></li>
-                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Dispute Resolution <span className="text-slate-400 font-normal">(8)</span></Link></li>
-                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Intellectual Property <span className="text-slate-400 font-normal">(5)</span></Link></li>
-                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Employment & Labor <span className="text-slate-400 font-normal">(14)</span></Link></li>
-                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Real Estate Law <span className="text-slate-400 font-normal">(7)</span></Link></li>
-                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Tax & Compliance <span className="text-slate-400 font-normal">(9)</span></Link></li>
+                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Corporativo e Comercial <span className="text-slate-400 font-normal">(12)</span></Link></li>
+                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Resolução de Disputas <span className="text-slate-400 font-normal">(8)</span></Link></li>
+                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Propriedade Intelectual <span className="text-slate-400 font-normal">(5)</span></Link></li>
+                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Trabalhista <span className="text-slate-400 font-normal">(14)</span></Link></li>
+                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Imobiliário <span className="text-slate-400 font-normal">(7)</span></Link></li>
+                <li><Link href="#" className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-colors">Tributário e Compliance <span className="text-slate-400 font-normal">(9)</span></Link></li>
               </ul>
             </div>
 
             {/* Popular Articles */}
             <div>
-              <h4 className="text-lg font-bold border-b border-slate-200 dark:border-slate-800 pb-3 mb-6 font-serif">Must Read</h4>
+              <h4 className="text-lg font-bold border-b border-slate-200 dark:border-slate-800 pb-3 mb-6 font-serif">Destaques</h4>
               <div className="space-y-6">
                 <Link href="#" className="flex gap-4 group">
                   <div className="w-16 h-16 shrink-0 overflow-hidden rounded-lg bg-slate-200 relative">
@@ -207,8 +207,8 @@ export default async function Insights() {
                     />
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold leading-snug group-hover:text-primary transition-colors">2024 Global ESG Compliance Guide</h5>
-                    <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1 inline-block">5 min read</span>
+                    <h5 className="text-sm font-bold leading-snug group-hover:text-primary transition-colors">Guia Global de Conformidade ESG 2024</h5>
+                    <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1 inline-block">5 min de leitura</span>
                   </div>
                 </Link>
                 <Link href="#" className="flex gap-4 group">
@@ -222,8 +222,8 @@ export default async function Insights() {
                     />
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold leading-snug group-hover:text-primary transition-colors">Mergers & Acquisitions in Tech</h5>
-                    <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1 inline-block">12 min read</span>
+                    <h5 className="text-sm font-bold leading-snug group-hover:text-primary transition-colors">Fusões e Aquisições em Tecnologia</h5>
+                    <span className="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1 inline-block">12 min de leitura</span>
                   </div>
                 </Link>
               </div>
@@ -232,12 +232,12 @@ export default async function Insights() {
             {/* Contact Widget */}
             <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
               <div className="relative z-10">
-                <h4 className="text-xl font-bold mb-4 font-serif">Need Expert Legal Counsel?</h4>
+                <h4 className="text-xl font-bold mb-4 font-serif">Precisa de Aconselhamento Jurídico Especializado?</h4>
                 <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                  Our specialized attorneys are here to help navigate your most complex legal challenges.
+                  Nossos advogados especialistas estão aqui para ajudar a navegar nos seus desafios legais mais complexos.
                 </p>
                 <Link href="/contact" className="inline-flex items-center gap-2 text-white font-bold group">
-                  Contact an Expert
+                  Fale com um Especialista
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>

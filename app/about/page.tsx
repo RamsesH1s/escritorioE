@@ -19,12 +19,12 @@ export default function About() {
           />
         </div>
         <div className="container mx-auto px-6 relative z-20 text-center max-w-4xl">
-          <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm mb-6 block">Our Legacy</span>
+          <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm mb-6 block">Nosso Legado</span>
           <h1 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tight font-serif leading-[1.1]">
-            A Tradition of <span className="text-accent italic">Excellence</span>
+            Uma Tradição de <span className="text-accent italic">Excelência</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
-            For over three decades, Dayra Oliveira has stood as a beacon of integrity, providing unparalleled legal counsel to individuals and corporations worldwide.
+            Por mais de três décadas, o escritório Dayra Oliveira mantém-se como um referencial de integridade, fornecendo orientação jurídica inigualável.
           </p>
         </div>
       </section>
@@ -36,20 +36,20 @@ export default function About() {
             <div className="space-y-8">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-0.5 bg-accent"></div>
-                <span className="text-primary font-bold uppercase tracking-widest text-sm">Who We Are</span>
+                <span className="text-primary font-bold uppercase tracking-widest text-sm">Quem Somos</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white font-serif leading-tight">
-                Committed to Justice, Dedicated to You.
+                Comprometidos com a Justiça, Dedicados a Você.
               </h2>
               <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                Founded on the principles of unwavering ethical standards and relentless advocacy, our firm has built a reputation for handling the most complex and high-stakes legal matters.
+                Fundado sob os princípios de inabaláveis padrões éticos e defesa incansável, nosso escritório construiu uma forte reputação no tratamento dos assuntos jurídicos mais complexos.
               </p>
               <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                We believe that every client deserves personalized attention and a tailored strategy. Our team of distinguished attorneys brings diverse expertise and a collaborative approach to every case.
+                Acreditamos que todo cliente merece atenção personalizada e uma estratégia elaborada. Nossa equipe de advogados traz um aprendizado diverso e colaborativo em cada caso trabalhado.
               </p>
               <div className="pt-4">
                 <Link href="/contact" className="inline-flex items-center justify-center rounded-lg h-14 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/20">
-                  Consult With Us
+                  Consulte-nos
                 </Link>
               </div>
             </div>
@@ -65,8 +65,8 @@ export default function About() {
               </div>
               <div className="absolute -bottom-10 -left-10 bg-white dark:bg-slate-900 p-8 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 max-w-xs hidden md:block">
                 <div className="text-5xl font-black text-primary font-serif mb-2">30+</div>
-                <div className="text-slate-900 dark:text-white font-bold uppercase tracking-wider text-sm mb-2">Years of Experience</div>
-                <p className="text-slate-500 text-sm">Delivering exceptional results across multiple practice areas.</p>
+                <div className="text-slate-900 dark:text-white font-bold uppercase tracking-wider text-sm mb-2">Anos de Experiência</div>
+                <p className="text-slate-500 text-sm">Entregando resultados excepcionais em várias áreas de atuação.</p>
               </div>
             </div>
           </div>
@@ -77,44 +77,44 @@ export default function About() {
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm">Our Philosophy</span>
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white font-serif">The Values That Drive Us</h2>
+            <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm">Nossa Filosofia</span>
+            <h2 className="text-4xl font-bold text-slate-900 dark:text-white font-serif">Valores Que Nos Movem</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Scale className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Integrity</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Integridade</h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                We operate with absolute transparency and adhere to the highest ethical standards in all our dealings.
+                Atuamos com absoluta transparência e pautamos nossos compromissos pelos mais altos padrões éticos.
               </p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Award className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Excellence</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Excelência</h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                We strive for perfection in our legal strategies, documentation, and courtroom representation.
+                Buscamos a perfeição em nossas estratégias, documentação e representações em tribunais.
               </p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Users className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Client Focus</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Foco no Cliente</h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                Your goals are our priority. We listen, understand, and tailor our approach to meet your specific needs.
+                Seus objetivos são nossa prioridade. Entendemos e nos adaptamos para atender às suas necessidades.
               </p>
             </div>
             <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group">
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <BookOpen className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Innovation</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 font-serif">Inovação</h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                We continuously adapt to the evolving legal landscape, employing modern strategies to solve complex problems.
+                Nos adaptamos continuamente ao cenário legal em evolução, utilizando estratégias modernas e resolutivas.
               </p>
             </div>
           </div>
@@ -126,14 +126,14 @@ export default function About() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div className="max-w-2xl space-y-4">
-              <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm">Our Leadership</span>
-              <h2 className="text-4xl font-bold text-slate-900 dark:text-white font-serif">Meet Our Partners</h2>
+              <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm">Nossa Liderança</span>
+              <h2 className="text-4xl font-bold text-slate-900 dark:text-white font-serif">Conheça Nossos Sócios</h2>
               <p className="text-slate-600 dark:text-slate-400 text-lg">
-                Our distinguished partners bring decades of specialized experience and a proven track record of success.
+                Nossos competentes e qualificados sócios trazem décadas de experiência e uma trajetória sólida de grandes resultados.
               </p>
             </div>
             <Link href="/team" className="inline-flex items-center text-primary font-bold uppercase tracking-wider text-sm hover:gap-2 transition-all">
-              View Full Team <ArrowRight className="w-4 h-4 ml-2" />
+              Ver Equipe <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </div>
 
@@ -151,9 +151,9 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-serif mb-1">David Lexington</h3>
-              <p className="text-primary font-medium mb-3">Managing Partner</p>
+              <p className="text-primary font-medium mb-3">Sócio-Gerente</p>
               <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3">
-                Specializing in high-stakes corporate litigation and international arbitration with over 25 years of experience representing Fortune 500 companies.
+                Com mais de 25 anos de experiência e atuação profissional, representa empresas atuantes ao redor de todo o mundo.
               </p>
             </div>
 
@@ -170,9 +170,9 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-serif mb-1">Sarah Thorne</h3>
-              <p className="text-primary font-medium mb-3">Senior Partner, Family Law</p>
+              <p className="text-primary font-medium mb-3">Sócia Sênior, Direito de Família</p>
               <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3">
-                A leading authority in complex family litigation, wealth preservation, and high-net-worth divorce proceedings.
+                Eximia liderança em assuntos delicados de sucessão familiar, aconselhamento e resolução de guarda, processos de mediação de famílias de diversos tipos e naturezas.
               </p>
             </div>
 
@@ -189,9 +189,9 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-serif mb-1">James Miller</h3>
-              <p className="text-primary font-medium mb-3">Partner, Real Estate</p>
+              <p className="text-primary font-medium mb-3">Sócio, Setor Imobiliário</p>
               <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3">
-                Expert in commercial real estate transactions, zoning laws, and large-scale property development negotiations.
+                Especialista em todo o processo de aquisições de grandes patrimônios e transações comerciais ao redor de todo o mundo.
               </p>
             </div>
           </div>

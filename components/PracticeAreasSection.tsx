@@ -9,11 +9,11 @@ export default function PracticeAreasSection() {
             <div className="max-w-[1200px] mx-auto px-6">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
                     <div className="flex flex-col gap-2">
-                        <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm">Expertise</span>
-                        <h2 className="text-slate-900 dark:text-slate-100 text-4xl font-serif font-bold">Areas of Practice</h2>
+                        <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm">Especialidades</span>
+                        <h2 className="text-slate-900 dark:text-slate-100 text-4xl font-serif font-bold">Áreas de Atuação</h2>
                     </div>
                     <Link href="/practices" className="text-primary font-bold uppercase tracking-wider text-sm flex items-center gap-2 hover:gap-3 transition-all">
-                        View All Practices <ArrowRight className="w-5 h-5" />
+                        Ver Todas as Áreas <ArrowRight className="w-5 h-5" />
                     </Link>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
