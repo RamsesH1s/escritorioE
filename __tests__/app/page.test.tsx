@@ -21,11 +21,11 @@ jest.mock('@/components/PracticeAreasSection', () => {
 });
 
 describe('Home Page', () => {
-    it('renders all sections on the main page', () => {
+    it('renders all sections on the main page', async () => {
         render(<Home />);
 
         expect(screen.getByTestId('hero-section')).toBeInTheDocument();
-        expect(screen.getByTestId('pillars-section')).toBeInTheDocument();
-        expect(screen.getByTestId('practice-areas-section')).toBeInTheDocument();
+        expect(await screen.findByTestId('pillars-section')).toBeInTheDocument();
+        expect(await screen.findByTestId('practice-areas-section')).toBeInTheDocument();
     });
 });

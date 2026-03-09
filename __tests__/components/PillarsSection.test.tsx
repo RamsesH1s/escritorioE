@@ -5,7 +5,7 @@ describe('PillarsSection Component', () => {
     it('renders the main section title', () => {
         render(<PillarsSection />);
         const title = screen.getByRole('heading', { level: 2 });
-        expect(title).toHaveTextContent(/The Three Pillars/i);
+        expect(title).toHaveTextContent(/Os Três Pilares/i);
     });
 
     it('renders three distinct pillars with icons', () => {
@@ -13,8 +13,8 @@ describe('PillarsSection Component', () => {
         const pillarsHeadings = screen.getAllByRole('heading', { level: 3 });
         expect(pillarsHeadings).toHaveLength(3);
 
-        expect(pillarsHeadings[0]).toHaveTextContent(/Experience/i);
-        expect(pillarsHeadings[1]).toHaveTextContent(/Integrity/i);
-        expect(pillarsHeadings[2]).toHaveTextContent(/Results/i);
+        expect(pillarsHeadings[0]).toHaveTextContent(/Experiência/i);
+        expect(pillarsHeadings[1]).toHaveTextContent(/Integridade/i);
+        expect(pillarsHeadings[2]).toHaveTextContent(/Resultados/i);
     });
 });

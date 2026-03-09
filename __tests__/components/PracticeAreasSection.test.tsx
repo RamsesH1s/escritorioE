@@ -5,8 +5,8 @@ import { PRACTICE_AREAS } from '@/lib/constants/practices';
 describe('PracticeAreasSection Component', () => {
     it('renders the section header and link', () => {
         render(<PracticeAreasSection />);
-        expect(screen.getByRole('heading', { level: 2, name: /Areas of Practice/i })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /View All Practices/i })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { level: 2, name: /Áreas de Atuação/i })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: /Ver Todas as Áreas/i })).toBeInTheDocument();
     });
 
     it('renders all practice area cards', () => {

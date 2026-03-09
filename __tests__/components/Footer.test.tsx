@@ -18,7 +18,7 @@ describe('Footer Component', () => {
 
     it('renders a newsletter subscription input', () => {
         render(<Footer />);
-        expect(screen.getByPlaceholderText(/Email Address/i)).toBeInTheDocument();
+        expect(screen.getByPlaceholderText(/Endereço de e-mail/i)).toBeInTheDocument();
         expect(screen.getByRole('button')).toBeInTheDocument(); // Send button
     });
 });

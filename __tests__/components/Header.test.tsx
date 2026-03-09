@@ -21,8 +21,8 @@ describe('Header Component', () => {
 
     it('renders the search input and Book Consultation button', () => {
         render(<Header />);
-        const searchInput = screen.getByPlaceholderText(/Search legal insights/i);
-        const bookButton = screen.getByText(/Book Consultation/i);
+        const searchInput = screen.getByPlaceholderText(/Buscar artigos/i);
+        const bookButton = screen.getAllByText(/Agendar Consulta/i)[0];
 
         expect(searchInput).toBeInTheDocument();
         expect(bookButton).toBeInTheDocument();

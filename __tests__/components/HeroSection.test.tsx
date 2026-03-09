@@ -10,8 +10,8 @@ describe('HeroSection', () => {
 
     it('renders the call to action buttons', () => {
         render(<HeroSection />);
-        const scheduleButton = screen.getByText(/Schedule a Call/i);
-        const practicesButton = screen.getByText(/Our Practice Areas/i);
+        const scheduleButton = screen.getByText(/Agende uma Reunião/i);
+        const practicesButton = screen.getByText(/Áreas de Atuação/i);
 
         expect(scheduleButton).toBeInTheDocument();
         expect(practicesButton).toBeInTheDocument();
