@@ -1,17 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import { MapPin, Phone, Mail, MessageCircle, ExternalLink, Navigation } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageCircle, ExternalLink, Navigation, Instagram } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.subject || !formData.message) {
       setStatus('error');
       setStatusMessage('Por favor, preencha todos os campos obrigatórios.');
       return;
@@ -19,27 +19,31 @@ export default function Contact() {
 
     setStatus('loading');
     try {
-      const response = await fetch('/backend-api/api/contact.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      // Format the message for WhatsApp
+      let text = `Olá! Gostaria de entrar em contato.\n\n`;
+      text += `*Nome:* ${formData.name}\n`;
+      text += `*Assunto:* ${formData.subject}\n`;
+      text += `\n*Mensagem:*\n${formData.message}`;
 
-      const data = await response.json();
+      const encodedText = encodeURIComponent(text);
+      const whatsappNumber = '558694404644';
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
-      if (response.ok) {
-        setStatus('success');
-        setStatusMessage(data.message || 'Mensagem enviada com sucesso!');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setStatus('error');
-        setStatusMessage(data.message || 'Falha ao enviar mensagem.');
-      }
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
+
+      setStatus('success');
+      setStatusMessage('Redirecionando para o WhatsApp...');
+      setFormData({ name: '', subject: '', message: '' });
+
+      // Reset status after a few seconds
+      setTimeout(() => setStatus('idle'), 3000);
     } catch (error) {
       setStatus('error');
-      setStatusMessage('Erro de rede. Por favor, tente novamente mais tarde.');
+      setStatusMessage('Erro ao abrir o WhatsApp. Por favor, tente novamente.');
     }
   };
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -76,27 +80,33 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Endereço de E-mail *</label>
-                  <input
-                    className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400"
-                    placeholder="john@example.com"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Assunto</label>
-                <input
-                  className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400"
-                  placeholder="Consulta Jurídica - Direito Societário"
-                  type="text"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                />
+                <label htmlFor="subject" className="text-sm font-semibold text-slate-700 dark:text-slate-300">Qual é o assunto do seu problema? *</label>
+                <div className="relative">
+                  <select
+                    id="subject"
+                    data-testid="subject-select"
+                    className="w-full appearance-none rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white"
+                    required
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  >
+                    <option value="" disabled>Selecione uma área de atuação</option>
+                    <option value="Direito Civil">Direito Civil</option>
+                    <option value="Direito do Consumidor">Direito do Consumidor</option>
+                    <option value="Direito Bancário">Direito Bancário</option>
+                    <option value="Direito Previdenciário">Direito Previdenciário</option>
+                    <option value="Direito Trabalhista">Direito Trabalhista</option>
+                    <option value="Direito Público">Direito Público</option>
+                    <option value="Outro assunto">Outro assunto</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                    <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                  </div>
+                </div>
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Mensagem *</label>
@@ -138,8 +148,8 @@ export default function Contact() {
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white mb-1">Localização</p>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      1201 Avenue of the Americas<br />
-                      Suite 400, New York, NY 10036
+                      Avenida Prefeito Freitas Neto, Quadra 19, Casa 01, Sala 02<br />
+                      Mocambinho I, Teresina - PI, 64010-067
                     </p>
                   </div>
                 </div>
@@ -148,28 +158,29 @@ export default function Contact() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white mb-1">Telefone e Fax</p>
-                    <p className="text-slate-600 dark:text-slate-400">Principal: +1 (212) 555-0198</p>
-                    <p className="text-slate-600 dark:text-slate-400">Fax: +1 (212) 555-0199</p>
+                    <p className="font-bold text-slate-900 dark:text-white mb-1">Telefone</p>
+                    <p className="text-slate-600 dark:text-slate-400">+55 (86) 9440-4644</p>
                   </div>
                 </div>
                 <div className="flex gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 dark:bg-primary/20 text-primary rounded-xl flex items-center justify-center">
-                    <Mail className="w-6 h-6" />
-                  </div>
+                  <a href="https://www.instagram.com/dayraoliveiradv?igsh=MWF0c3NxMGtrYW11" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-12 h-12 bg-pink-500/10 dark:bg-pink-500/20 text-pink-600 dark:text-pink-400 rounded-xl flex items-center justify-center hover:bg-pink-500/20 dark:hover:bg-pink-500/30 transition-colors cursor-pointer">
+                    <Instagram className="w-6 h-6" />
+                  </a>
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white mb-1">Envie-nos um E-mail</p>
-                    <p className="text-slate-600 dark:text-slate-400">contact@lexpartners.com</p>
-                    <p className="text-slate-600 dark:text-slate-400">support@lexpartners.com</p>
+                    <p className="font-bold text-slate-900 dark:text-white mb-1">Instagram</p>
+                    <a className="text-slate-600 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors flex items-center gap-1" href="https://www.instagram.com/dayraoliveiradv?igsh=MWF0c3NxMGtrYW11" target="_blank" rel="noopener noreferrer">
+                      @dayraoliveiradv
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
                   </div>
                 </div>
                 <div className="flex gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-500/10 dark:bg-green-500/20 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center">
+                  <a href="https://wa.me/558694404644" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-12 h-12 bg-green-500/10 dark:bg-green-500/20 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center hover:bg-green-500/20 dark:hover:bg-green-500/30 transition-colors cursor-pointer">
                     <MessageCircle className="w-6 h-6" />
-                  </div>
+                  </a>
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white mb-1">Suporte via WhatsApp</p>
-                    <a className="text-green-600 dark:text-green-400 font-semibold hover:underline flex items-center gap-1" href="#">
+                    <a className="text-green-600 dark:text-green-400 font-semibold hover:underline flex items-center gap-1" href="https://wa.me/558694404644" target="_blank" rel="noopener noreferrer">
                       Fale com um consultor
                       <ExternalLink className="w-4 h-4" />
                     </a>
@@ -180,9 +191,8 @@ export default function Contact() {
             <div className="p-6 bg-slate-900 dark:bg-slate-800 rounded-xl text-white">
               <h4 className="font-bold mb-2">Horário de Funcionamento</h4>
               <ul className="space-y-2 text-sm text-slate-300">
-                <li className="flex justify-between"><span>Seg - Sex:</span> <span>9:00 - 18:00</span></li>
-                <li className="flex justify-between"><span>Sábado:</span> <span>10:00 - 14:00</span></li>
-                <li className="flex justify-between"><span>Domingo:</span> <span>Fechado</span></li>
+                <li className="flex justify-between"><span>Seg - Sexta:</span> <span>09:00 - 18:00</span></li>
+                <li className="flex justify-between"><span>Sáb - Dom:</span> <span>Fechado</span></li>
               </ul>
             </div>
           </div>
@@ -208,8 +218,8 @@ export default function Contact() {
           </div>
         </div>
         <div className="absolute bottom-6 left-6 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-xl max-w-xs border border-slate-100 dark:border-slate-800">
-          <p className="font-bold text-slate-900 dark:text-white text-sm">Escritório Lex & Partners</p>
-          <p className="text-xs text-slate-500 mt-1">1201 Avenue of the Americas, Manhattan</p>
+          <p className="font-bold text-slate-900 dark:text-white text-sm">Escritório Dayra Oliveira</p>
+          <p className="text-xs text-slate-500 mt-1">Av. Pref. Freitas Neto, Q. 19, C. 01, S. 02</p>
           <button className="mt-3 text-primary text-xs font-bold flex items-center gap-1 hover:underline">
             Como Chegar <Navigation className="w-4 h-4" />
           </button>

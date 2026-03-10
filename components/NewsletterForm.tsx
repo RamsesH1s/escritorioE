@@ -14,7 +14,7 @@ export default function NewsletterForm({ variant = 'footer' }: { variant?: 'foot
 
         setStatus('loading');
         try {
-            const response = await fetch('/backend-api/api/newsletter.php', {
+            const response = await fetch('/api/newsletter', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),

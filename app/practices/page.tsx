@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Gavel, Briefcase, Users, Heart, Shield, Landmark, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Gavel, ShoppingBag, Users, Landmark, Shield, CheckCircle2, ArrowRight, Building2 } from 'lucide-react';
 
 export default function Practices() {
   return (
@@ -51,33 +51,33 @@ export default function Practices() {
                   <CheckCircle2 className="w-4 h-4 text-accent" /> Disputas de Propriedade
                 </li>
               </ul>
-              <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
+              <Link href="/contact" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
+                ENTRAR EM CONTATO <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
-            {/* Corporate Law */}
+            {/* Consumer Law */}
             <div className="group p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-accent/50 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-300">
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                <Briefcase className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                <ShoppingBag className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Societário</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito do Consumidor</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Assessoria completa em fusões, aquisições e governança corporativa. Apoiando seu negócio em todas as fases de crescimento.
+                Proteção nas relações de consumo, garantindo a defesa de seus direitos contra práticas abusivas de empresas e prestadores de serviços.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Transações M&A
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Práticas Abusivas
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Venture Capital
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Indenização por Danos
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Compliance e Riscos
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Revisão de Contratos de Consumo
                 </li>
               </ul>
-              <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
+              <Link href="/contact" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
+                ENTRAR EM CONTATO <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -101,83 +101,83 @@ export default function Practices() {
                   <CheckCircle2 className="w-4 h-4 text-accent" /> Auditorias de Remuneração
                 </li>
               </ul>
-              <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
+              <Link href="/contact" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
+                ENTRAR EM CONTATO <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
-            {/* Family Law */}
-            <div className="group p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-accent/50 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-300">
-              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                <Heart className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito de Família</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Orientação compassiva em divórcios, guarda e planejamento sucessório. Priorizamos o bem-estar de sua família.
-              </p>
-              <ul className="space-y-2 mb-8">
-                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Mediação de Divórcio
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Guarda de Menores
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Testamentos e Fundos
-                </li>
-              </ul>
-              <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </div>
-
-            {/* Criminal Law */}
-            <div className="group p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-accent/50 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-300">
-              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                <Shield className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Penal</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Defesa e representação em questões criminais de alto risco. Protegendo seus direitos e garantindo um processo justo.
-              </p>
-              <ul className="space-y-2 mb-8">
-                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Defesa de Colarinho Branco
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Representação em Crimes Graves
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Recursos e Petições
-                </li>
-              </ul>
-              <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </div>
-
-            {/* Tax Law */}
+            {/* Banking Law */}
             <div className="group p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-accent/50 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-300">
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                 <Landmark className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Tributário</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Bancário</h3>
               <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                Planejamento estratégico e resolução para estruturas financeiras complexas. Minimizando riscos mantendo a conformidade total.
+                Atuação especializada contra abusos de instituições financeiras, visando a proteção do patrimônio e a revisão de contratos desproporcionais.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Tributação Internacional
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Juros Abusivos
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Planejamento Tributário Imobiliário
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Fraudes Bancárias
                 </li>
                 <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <CheckCircle2 className="w-4 h-4 text-accent" /> Controvérsias Fiscais
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Endividamento
                 </li>
               </ul>
-              <Link href="#" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
-                SAIBA MAIS <ArrowRight className="w-4 h-4 ml-1" />
+              <Link href="/contact" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
+                ENTRAR EM CONTATO <ArrowRight className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+
+            {/* Social Security Law */}
+            <div className="group p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-accent/50 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-300">
+              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                <Shield className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Previdenciário</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
+                Garantia dos seus direitos perante o INSS. Planejamento de aposentadorias, auxílios e benefícios com a máxima segurança.
+              </p>
+              <ul className="space-y-2 mb-8">
+                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Aposentadorias
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Auxílio-Doença
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Pensão por Morte
+                </li>
+              </ul>
+              <Link href="/contact" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
+                ENTRAR EM CONTATO <ArrowRight className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+
+            {/* Public Law */}
+            <div className="group p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-accent/50 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-300">
+              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                <Building2 className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Direito Público</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
+                Consultoria e atuação em licitações, contratos administrativos e defesa de servidores públicos. Foco na legalidade e transparência.
+              </p>
+              <ul className="space-y-2 mb-8">
+                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Licitações e Contratos
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Processos Administrativos
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <CheckCircle2 className="w-4 h-4 text-accent" /> Defesa de Servidores
+                </li>
+              </ul>
+              <Link href="/contact" className="inline-flex items-center text-primary font-bold text-sm hover:gap-2 transition-all">
+                ENTRAR EM CONTATO <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
           </div>
@@ -188,17 +188,14 @@ export default function Practices() {
       <section className="py-20 bg-background-light dark:bg-slate-900/80">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto bg-white dark:bg-background-dark p-12 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Precisa de Consulta Jurídica?</h2>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 font-serif">Precisa de ajuda com alguma área que não apresentamos acima?</h2>
             <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-              Nossa equipe experiente de advogados está pronta para analisar seu caso e fornecer o conselho estratégico que você merece. Contate-nos hoje mesmo.
+              Temos profissionais qualificados em diversas outras especialidades jurídicas. Fale conosco sobre o seu caso e cuidaremos de tudo para você.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
-                Agendar Reunião
-              </button>
-              <button className="w-full sm:w-auto border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
-                Ver Resultados
-              </button>
+              <Link href="/contact" className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                Entrar em Contato
+              </Link>
             </div>
           </div>
         </div>

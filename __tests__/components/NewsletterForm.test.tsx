@@ -47,6 +47,6 @@ describe('NewsletterForm Component', () => {
             expect(screen.getByText('Inscrito com sucesso!')).toBeInTheDocument();
         });
 
-        expect(global.fetch).toHaveBeenCalledWith('/backend-api/api/newsletter.php', expect.any(Object));
+        expect(global.fetch).toHaveBeenCalledWith('/api/newsletter', expect.any(Object));
     });
 });

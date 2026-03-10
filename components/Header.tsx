@@ -38,16 +38,10 @@ export default function Header() {
         </nav>
       </div>
       <div className="flex items-center gap-4 md:gap-6">
-        <div className="hidden lg:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 border border-slate-200 dark:border-slate-700">
-          <Search className="w-5 h-5 text-slate-500" />
-          <input
-            className="bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500 w-40 ml-2 outline-none"
-            placeholder="Buscar artigos..."
-          />
-        </div>
-        <button className="hidden sm:flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/20 transition-all">
+
+        <Link href="https://wa.me/558694404644?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" className="hidden sm:flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/20 transition-all">
           <span>Agendar Consulta</span>
-        </button>
+        </Link>
         <button
           className="md:hidden p-2 text-slate-700 dark:text-slate-300"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -64,16 +58,10 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 mt-2 border border-slate-200 dark:border-slate-700">
-            <Search className="w-5 h-5 text-slate-500" />
-            <input
-              className="bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500 w-full ml-2 outline-none"
-              placeholder="Buscar artigos..."
-            />
-          </div>
-          <button className="w-full mt-2 cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/20 transition-all">
+
+          <Link href="https://wa.me/558694404644?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="w-full mt-2 cursor-pointer flex items-center justify-center rounded-lg h-11 px-5 bg-primary hover:bg-primary/90 text-white text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/20 transition-all">
             <span>Agendar Consulta</span>
-          </button>
+          </Link>
         </div>
       )}
     </header>

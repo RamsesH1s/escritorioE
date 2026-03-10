@@ -3,10 +3,10 @@ import Header from '@/components/Header';
 import { MAIN_NAVIGATION, OFFICE_INFO } from '@/lib/constants/navigation';
 
 describe('Header Component', () => {
-    it('renders the logo and office name', () => {
+    it('renders the logo image', () => {
         render(<Header />);
-        const heading = screen.getByRole('heading', { level: 2 });
-        expect(heading).toHaveTextContent(OFFICE_INFO.name);
+        const logo = screen.getByAltText(/Dayra Oliveira Advogada e Consultora Jurídica Logo/i);
+        expect(logo).toBeInTheDocument();
     });
 
     it('renders desktop navigation links', () => {
@@ -19,12 +19,9 @@ describe('Header Component', () => {
         });
     });
 
-    it('renders the search input and Book Consultation button', () => {
+    it('renders the Book Consultation button', () => {
         render(<Header />);
-        const searchInput = screen.getByPlaceholderText(/Buscar artigos/i);
         const bookButton = screen.getAllByText(/Agendar Consulta/i)[0];
-
-        expect(searchInput).toBeInTheDocument();
         expect(bookButton).toBeInTheDocument();
     });
 });

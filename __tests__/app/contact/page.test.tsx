@@ -1,24 +1,23 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Contact from '@/app/contact/page';
 
-global.fetch = jest.fn(() =>
-    Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ message: 'Mensagem enviada com sucesso!' }),
-    })
-) as jest.Mock;
+// Mock window.open
+const mockOpen = jest.fn();
+global.window.open = mockOpen;
 
 describe('Contact Page', () => {
     beforeEach(() => {
         jest.clearAllMocks();
+        mockOpen.mockClear();
     });
 
     it('renders the contact form inputs and buttons', () => {
         render(<Contact />);
 
         expect(screen.getByPlaceholderText(/John Doe/i)).toBeInTheDocument();
-        expect(screen.getByPlaceholderText(/john@example.com/i)).toBeInTheDocument();
-        expect(screen.getByPlaceholderText(/Consulta Jurídica - Direito Societário/i)).toBeInTheDocument();
+        // The email field is gone now
+        // Find the select by its label text
+        expect(screen.getByLabelText(/Qual é o assunto do seu problema/i)).toBeInTheDocument();
         expect(screen.getByPlaceholderText(/Como podemos ajudá-lo\?/i)).toBeInTheDocument();
 
         expect(screen.getByRole('button', { name: /Enviar Mensagem/i })).toBeInTheDocument();
@@ -29,18 +28,15 @@ describe('Contact Page', () => {
         render(<Contact />);
 
         const nameInput = screen.getByPlaceholderText(/John Doe/i);
-        const emailInput = screen.getByPlaceholderText(/john@example.com/i);
-        const subjectInput = screen.getByPlaceholderText(/Consulta Jurídica/i);
+        const subjectSelect = screen.getByLabelText(/Qual é o assunto do seu problema/i);
         const messageInput = screen.getByPlaceholderText(/Como podemos ajudá-lo\?/i);
 
         fireEvent.change(nameInput, { target: { value: 'Alice' } });
-        fireEvent.change(emailInput, { target: { value: 'alice@example.com' } });
-        fireEvent.change(subjectInput, { target: { value: 'Test Subject' } });
+        fireEvent.change(subjectSelect, { target: { value: 'Direito Trabalhista' } });
         fireEvent.change(messageInput, { target: { value: 'Test message body' } });
 
         expect(nameInput).toHaveValue('Alice');
-        expect(emailInput).toHaveValue('alice@example.com');
-        expect(subjectInput).toHaveValue('Test Subject');
+        expect(subjectSelect).toHaveValue('Direito Trabalhista');
         expect(messageInput).toHaveValue('Test message body');
     });
 
@@ -48,25 +44,23 @@ describe('Contact Page', () => {
         render(<Contact />);
 
         const nameInput = screen.getByPlaceholderText(/John Doe/i);
-        const emailInput = screen.getByPlaceholderText(/john@example.com/i);
+        const subjectSelect = screen.getByLabelText(/Qual é o assunto do seu problema/i);
         const messageInput = screen.getByPlaceholderText(/Como podemos ajudá-lo\?/i);
         const submitButton = screen.getByRole('button', { name: /Enviar Mensagem/i });
 
         fireEvent.change(nameInput, { target: { value: 'Bob' } });
-        fireEvent.change(emailInput, { target: { value: 'bob@example.com' } });
+        fireEvent.change(subjectSelect, { target: { value: 'Direito Civil' } });
         fireEvent.change(messageInput, { target: { value: 'Important inquiry' } });
 
         fireEvent.click(submitButton);
 
-        expect(submitButton).toBeDisabled();
-        expect(submitButton).toHaveTextContent(/Enviando.../i);
-
         await waitFor(() => {
-            expect(screen.getByText('Mensagem enviada com sucesso!')).toBeInTheDocument();
+            expect(screen.getByText('Redirecionando para o WhatsApp...')).toBeInTheDocument();
         });
 
-        expect(global.fetch).toHaveBeenCalledWith('/backend-api/api/contact.php', expect.objectContaining({
-            method: 'POST',
-        }));
+        expect(mockOpen).toHaveBeenCalledWith(
+            expect.stringContaining('https://wa.me/558694404644?text='),
+            '_blank'
+        );
     });
 });

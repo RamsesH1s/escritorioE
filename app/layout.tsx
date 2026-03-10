@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: 'Dayra Oliveira',
     image: 'https://dayraoliveira.com/images/hero.jpg',
     url: 'https://dayraoliveira.com',
-    telephone: '+1-212-555-0198',
+    telephone: '+55-86-9440-4644',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '123 Legal Plaza, Suite 400',

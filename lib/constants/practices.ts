@@ -1,20 +1,20 @@
 export const PRACTICE_AREAS = [
     {
-        id: 'corporate-law',
-        title: 'Direito Societário',
-        description: 'Aconselhamento estratégico para negócios modernos.',
+        id: 'civil-law',
+        title: 'Direito Civil',
+        description: 'Especialistas em litígios e resolução de disputas complexas.',
+        imageSrc: '/images/real-estate.jpg',
+    },
+    {
+        id: 'labor-law',
+        title: 'Direito Trabalhista',
+        description: 'Protegendo os direitos de empregadores e empregados com excelência.',
         imageSrc: '/images/corporate-law.jpg',
     },
     {
-        id: 'family-litigation',
-        title: 'Direito de Família',
-        description: 'Advocacia firme e compassiva.',
+        id: 'consumer-law',
+        title: 'Direito do Consumidor',
+        description: 'Defesa incansável dos seus direitos nas relações de consumo.',
         imageSrc: '/images/family-law.jpg',
-    },
-    {
-        id: 'real-estate',
-        title: 'Direito Imobiliário',
-        description: 'Protegendo sua propriedade e seu futuro.',
-        imageSrc: '/images/real-estate.jpg',
     }
 ];

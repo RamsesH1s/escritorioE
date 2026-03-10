@@ -4,58 +4,41 @@ import { ChevronRight, ChevronLeft, User, Calendar, ArrowRight } from 'lucide-re
 import NewsletterForm from '@/components/NewsletterForm';
 
 export default async function Insights() {
-  let articles = [];
-  try {
-    const apiUrl = process.env.NEXT_PUBLIC_PHP_API_URL || 'http://localhost/backend-api';
-    const res = await fetch(`${apiUrl}/api/insights.php`, {
-      next: { revalidate: 3600 } // ISR cache (1 hour)
-    });
-    if (res.ok) {
-      const json = await res.json();
-      articles = json.data || [];
+  const articles = [
+    {
+      id: 1,
+      title: "Impact of Remote Witness Testimony on Civil Trials",
+      slug: "impact-of-remote-witness-testimony-on-civil-trials",
+      summary: "As judicial systems adapt to hybrid models, we explore the legal precedents being set regarding digital evidence and remote cross-examinations.",
+      cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBTAwqQGX3C6kVWJgD-Pdmf8spUd4hOxeopNUv2HLWJicul1xxIQAYuGIDdjQiu2EEXs3mw0ZhIOcmsjLaYmZwaekd-L42sqFhWHfBwnZ4qRe9jTsDlsrfVsZuKu-xUHQJ7V2fDO4JipLxvd1F-BAWx-ZjArr8Fh6q5O_fNoINoNb7gkcZl2xhbPdLI_CAO9cWZciaksrbH8JFTVMahuTWVzn1--Wj4AnUN5eJeErBcaeXojbndUhjpYUQYOpkjPWJKS-BEai4oaRY",
+      category: { name: "Litigation" },
+      estimated_read_time: 12,
+      author: { name: "Dayra Oliveira" },
+      published_at: "2023-10-18"
+    },
+    {
+      id: 2,
+      title: "AI and Copyright Law: The New Frontier of Ownership",
+      slug: "ai-and-copyright-law",
+      summary: "Analyzing recent court rulings on AI-generated content and what creative agencies need to know about protecting their assets.",
+      cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJoxSLJFFsbkGEt7rJzurFnjs27McEGt024sJiIOWTCw_KbmdzO07U7qolQ2jNtpZsPs9PLILGpNFBhhq66mOvi58qIm1YO6NJS5DWzUxclVXCzwwwvGL4dOZ3blkWQ5V-rOFxVHt5Zz4lIp3sbqcs6TZE8GUWF5arGPrRCMb9i74_qrVd8RkD6pvdUTRmNvsOdjEYKqr1EU8H-1CHpl8Owi9kzwP9feVjuX2oo17-b3LmBrHZS9OgHeATQyVrX7augXhGx0lcZDU",
+      category: { name: "Intellectual Property" },
+      estimated_read_time: 8,
+      author: { name: "Dayra Oliveira" },
+      published_at: "2023-10-15"
+    },
+    {
+      id: 3,
+      title: "Navigating New Non-Compete Clauses",
+      slug: "navigating-new-non-compete-clauses",
+      summary: "A comprehensive guide for HR departments on the recent federal ban on non-compete agreements and alternative protection methods.",
+      cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjLsDdWo2_dGnv7vkArzFCp_npk_ayShEmuTkjQc4VORrGO9SbWnzKv7SxCqVYlsGVKfRSqKZhQvfez7oNETL43tvuIiCU_NRPgpgXlGajuAnMHE8ZPXNQDN6qBKSl1bTnyK_8iAlDpMJCNVPSBaHcbhFHFLhNTT5e5XrcW5jCLBQjTXplyNXxOQsgyafrl1o63RHHwpGGutcBJGp45xRXOdcLey977VptJNmS59zYMUgsoNbifJJ1gwW1H2ykZZBfdKQjXPDKL9c",
+      category: { name: "Employment Law" },
+      estimated_read_time: 15,
+      author: { name: "Dayra Oliveira" },
+      published_at: "2023-10-10"
     }
-  } catch (e) {
-    // PHP API not reachable, falling back to static data silently.
-  }
-
-  // Backup static data for local dev without PHP server
-  if (articles.length === 0) {
-    articles = [
-      {
-        id: 1,
-        title: "Impact of Remote Witness Testimony on Civil Trials",
-        slug: "impact-of-remote-witness-testimony-on-civil-trials",
-        summary: "As judicial systems adapt to hybrid models, we explore the legal precedents being set regarding digital evidence and remote cross-examinations.",
-        cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBTAwqQGX3C6kVWJgD-Pdmf8spUd4hOxeopNUv2HLWJicul1xxIQAYuGIDdjQiu2EEXs3mw0ZhIOcmsjLaYmZwaekd-L42sqFhWHfBwnZ4qRe9jTsDlsrfVsZuKu-xUHQJ7V2fDO4JipLxvd1F-BAWx-ZjArr8Fh6q5O_fNoINoNb7gkcZl2xhbPdLI_CAO9cWZciaksrbH8JFTVMahuTWVzn1--Wj4AnUN5eJeErBcaeXojbndUhjpYUQYOpkjPWJKS-BEai4oaRY",
-        category: { name: "Litigation" },
-        estimated_read_time: 12,
-        author: { name: "Sarah Thorne" },
-        published_at: "2023-10-18"
-      },
-      {
-        id: 2,
-        title: "AI and Copyright Law: The New Frontier of Ownership",
-        slug: "ai-and-copyright-law",
-        summary: "Analyzing recent court rulings on AI-generated content and what creative agencies need to know about protecting their assets.",
-        cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJoxSLJFFsbkGEt7rJzurFnjs27McEGt024sJiIOWTCw_KbmdzO07U7qolQ2jNtpZsPs9PLILGpNFBhhq66mOvi58qIm1YO6NJS5DWzUxclVXCzwwwvGL4dOZ3blkWQ5V-rOFxVHt5Zz4lIp3sbqcs6TZE8GUWF5arGPrRCMb9i74_qrVd8RkD6pvdUTRmNvsOdjEYKqr1EU8H-1CHpl8Owi9kzwP9feVjuX2oo17-b3LmBrHZS9OgHeATQyVrX7augXhGx0lcZDU",
-        category: { name: "Intellectual Property" },
-        estimated_read_time: 8,
-        author: { name: "James Miller" },
-        published_at: "2023-10-15"
-      },
-      {
-        id: 3,
-        title: "Navigating New Non-Compete Clauses",
-        slug: "navigating-new-non-compete-clauses",
-        summary: "A comprehensive guide for HR departments on the recent federal ban on non-compete agreements and alternative protection methods.",
-        cover_image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjLsDdWo2_dGnv7vkArzFCp_npk_ayShEmuTkjQc4VORrGO9SbWnzKv7SxCqVYlsGVKfRSqKZhQvfez7oNETL43tvuIiCU_NRPgpgXlGajuAnMHE8ZPXNQDN6qBKSl1bTnyK_8iAlDpMJCNVPSBaHcbhFHFLhNTT5e5XrcW5jCLBQjTXplyNXxOQsgyafrl1o63RHHwpGGutcBJGp45xRXOdcLey977VptJNmS59zYMUgsoNbifJJ1gwW1H2ykZZBfdKQjXPDKL9c",
-        category: { name: "Employment Law" },
-        estimated_read_time: 15,
-        author: { name: "Robert Chen" },
-        published_at: "2023-10-10"
-      }
-    ];
-  }
+  ];
 
   return (
     <div className="flex flex-col">
@@ -92,7 +75,7 @@ export default async function Insights() {
             <div className="flex items-center gap-4 text-slate-300 text-sm">
               <span className="flex items-center gap-1.5 font-medium">
                 <User className="w-4 h-4" />
-                By David Lexington
+                By Dayra Oliveira
               </span>
               <span className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />

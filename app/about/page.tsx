@@ -127,71 +127,31 @@ export default function About() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div className="max-w-2xl space-y-4">
               <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm">Nossa Liderança</span>
-              <h2 className="text-4xl font-bold text-slate-900 dark:text-white font-serif">Conheça Nossos Sócios</h2>
+              <h2 className="text-4xl font-bold text-slate-900 dark:text-white font-serif">Conheça Nossa Advogada</h2>
               <p className="text-slate-600 dark:text-slate-400 text-lg">
-                Nossos competentes e qualificados sócios trazem décadas de experiência e uma trajetória sólida de grandes resultados.
+                Nossa competente e qualificada advogada traz décadas de experiência e uma trajetória sólida de grandes resultados.
               </p>
             </div>
-            <Link href="/team" className="inline-flex items-center text-primary font-bold uppercase tracking-wider text-sm hover:gap-2 transition-all">
-              Ver Equipe <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
+            {/* Link "Ver Equipe" removido a pedido do cliente */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Partner 1 */}
-            <div className="group cursor-pointer">
+          <div className="flex justify-center max-w-sm mx-auto">
+            {/* Single Lawyer Card */}
+            <div className="group cursor-pointer w-full">
               <div className="aspect-[3/4] rounded-xl overflow-hidden relative mb-6">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTAwqQGX3C6kVWJgD-Pdmf8spUd4hOxeopNUv2HLWJicul1xxIQAYuGIDdjQiu2EEXs3mw0ZhIOcmsjLaYmZwaekd-L42sqFhWHfBwnZ4qRe9jTsDlsrfVsZuKu-xUHQJ7V2fDO4JipLxvd1F-BAWx-ZjArr8Fh6q5O_fNoINoNb7gkcZl2xhbPdLI_CAO9cWZciaksrbH8JFTVMahuTWVzn1--Wj4AnUN5eJeErBcaeXojbndUhjpYUQYOpkjPWJKS-BEai4oaRY"
-                  alt="David Lexington"
+                  src="/images/dayra-nova.jpg.jpeg"
+                  alt="Dayra Oliveira"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-serif mb-1">David Lexington</h3>
-              <p className="text-primary font-medium mb-3">Sócio-Gerente</p>
-              <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3">
-                Com mais de 25 anos de experiência e atuação profissional, representa empresas atuantes ao redor de todo o mundo.
-              </p>
-            </div>
-
-            {/* Partner 2 */}
-            <div className="group cursor-pointer">
-              <div className="aspect-[3/4] rounded-xl overflow-hidden relative mb-6">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJoxSLJFFsbkGEt7rJzurFnjs27McEGt024sJiIOWTCw_KbmdzO07U7qolQ2jNtpZsPs9PLILGpNFBhhq66mOvi58qIm1YO6NJS5DWzUxclVXCzwwwvGL4dOZ3blkWQ5V-rOFxVHt5Zz4lIp3sbqcs6TZE8GUWF5arGPrRCMb9i74_qrVd8RkD6pvdUTRmNvsOdjEYKqr1EU8H-1CHpl8Owi9kzwP9feVjuX2oo17-b3LmBrHZS9OgHeATQyVrX7augXhGx0lcZDU"
-                  alt="Sarah Thorne"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-serif mb-1">Sarah Thorne</h3>
-              <p className="text-primary font-medium mb-3">Sócia Sênior, Direito de Família</p>
-              <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3">
-                Eximia liderança em assuntos delicados de sucessão familiar, aconselhamento e resolução de guarda, processos de mediação de famílias de diversos tipos e naturezas.
-              </p>
-            </div>
-
-            {/* Partner 3 */}
-            <div className="group cursor-pointer">
-              <div className="aspect-[3/4] rounded-xl overflow-hidden relative mb-6">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjLsDdWo2_dGnv7vkArzFCp_npk_ayShEmuTkjQc4VORrGO9SbWnzKv7SxCqVYlsGVKfRSqKZhQvfez7oNETL43tvuIiCU_NRPgpgXlGajuAnMHE8ZPXNQDN6qBKSl1bTnyK_8iAlDpMJCNVPSBaHcbhFHFLhNTT5e5XrcW5jCLBQjTXplyNXxOQsgyafrl1o63RHHwpGGutcBJGp45xRXOdcLey977VptJNmS59zYMUgsoNbifJJ1gwW1H2ykZZBfdKQjXPDKL9c"
-                  alt="James Miller"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-serif mb-1">James Miller</h3>
-              <p className="text-primary font-medium mb-3">Sócio, Setor Imobiliário</p>
-              <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3">
-                Especialista em todo o processo de aquisições de grandes patrimônios e transações comerciais ao redor de todo o mundo.
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white font-serif mb-1 text-center">Dayra Oliveira</h3>
+              <p className="text-primary font-medium mb-4 text-center">Advogada e Consultora Jurídica</p>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-center">
+                Com anos de experiência e atuação profissional, Dayra representa clientes com integridade, entregando resultados excepcionais em diversas áreas do direito.
               </p>
             </div>
           </div>
