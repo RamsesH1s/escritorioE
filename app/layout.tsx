@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     siteName: 'Dayra Oliveira',
     images: [
       {
-        url: '/images/hero.jpg',
+        url: '/images/dayra-nova.jpg.jpeg', // Imagem que aparece no link
         width: 1200,
         height: 630,
-        alt: 'Dayra Oliveira Office',
+        alt: 'Dayra Oliveira',
       },
     ],
     locale: 'pt_BR',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dayra Oliveira | Advogada e Consultora Jurídica',
     description: 'Serviços jurídicos premium com foco em integridade, excelência e a busca incansável pela justiça.',
-    images: ['/images/hero.jpg'],
+    images: ['/images/dayra-nova.jpg.jpeg'], // Imagem que aparece no link
   },
 };
 
