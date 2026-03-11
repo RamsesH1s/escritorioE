@@ -15,8 +15,12 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Dayra Oliveira | Advogada e Consultora Jurídica',
+  metadataBase: new URL('http://localhost:3000'), // Or production URL when deployed
+  title: 'Dayra Oliveira ADV',
   description: 'Serviços jurídicos premium com foco em integridade, excelência e a busca incansável pela justiça para nossos clientes.',
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'Dayra Oliveira | Advogada e Consultora Jurídica',
     description: 'Serviços jurídicos premium com foco em integridade, excellence e a busca incansável pela justiça.',

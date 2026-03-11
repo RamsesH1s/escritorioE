@@ -16,7 +16,7 @@ export default function PillarsSection() {
                     </div>
                     <h3 className="text-slate-900 dark:text-slate-100 text-xl font-bold mb-4 uppercase tracking-wider font-serif">Experiência</h3>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed font-display">
-                        Mais de 30 anos de experiência jurídica combinada na condução de litígios complexos e negociações corporativas de alto risco.
+                        2 anos de experiência jurídica combinada na condução de litígios complexos e negociações corporativas de alto risco.
                     </p>
                 </div>
                 {/* Pillar: Integrity */}

@@ -73,7 +73,7 @@ export default function Contact() {
                   <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Nome Completo *</label>
                   <input
                     className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-background-light dark:bg-slate-800 p-4 text-base focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder:text-slate-400"
-                    placeholder="John Doe"
+                    placeholder="Digite aqui seu nome"
                     type="text"
                     required
                     value={formData.name}
@@ -200,29 +200,26 @@ export default function Contact() {
       </div>
 
       {/* Map Section */}
-      <div className="w-full h-[450px] bg-slate-200 relative overflow-hidden">
-        <Image
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa793yVWChOjLnHP0nqUgJWmm8my1OEOAS4AASiLT56tx6U2Ot2FST4MsPdj0dwI7G-uoAwSrj2mG3FP5P6yjzrUk-JceWomNMctoWfz1eJWnlVRI58kYhq0VcEFJ8Dv9OdLhVg3n526SnKPXu7CJwNH7EWWOflEm-zh1jNK6mPbfhVS-Oq3GRMpnbg5AqJsfZGIo5r3bOOV_i7XWfo0DEGzvegNvsuiWbs3hEjYJzVySUXngQzdvcz9EGkwOvnmYP3KlDdNEPlug"
-          alt="Office Location Map"
-          fill
-          className="object-cover filter grayscale contrast-125"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-primary/10 pointer-events-none"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute w-24 h-24 bg-primary/20 rounded-full animate-ping"></div>
-            <div className="relative w-12 h-12 bg-primary rounded-full border-4 border-white flex items-center justify-center shadow-xl">
-              <MapPin className="w-6 h-6 text-white" />
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-6 left-6 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-xl max-w-xs border border-slate-100 dark:border-slate-800">
+      <div className="w-full h-[450px] relative overflow-hidden bg-slate-200">
+        <iframe
+          src="https://maps.google.com/maps?q=Avenida+Prefeito+Freitas+Neto,+Mocambinho,+Teresina,+PI&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0 grayscale contrast-125 opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+          title="Dayra Oliveira Office Location"
+        ></iframe>
+        
+        {/* Decorative Overlay Box (Optional, can be kept for styling or removed if the map is enough) */}
+        <div className="absolute bottom-6 left-6 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-xl max-w-xs border border-slate-100 dark:border-slate-800 pointer-events-none transition-opacity duration-300 hover:opacity-0">
           <p className="font-bold text-slate-900 dark:text-white text-sm">Escritório Dayra Oliveira</p>
           <p className="text-xs text-slate-500 mt-1">Av. Pref. Freitas Neto, Q. 19, C. 01, S. 02</p>
-          <button className="mt-3 text-primary text-xs font-bold flex items-center gap-1 hover:underline">
-            Como Chegar <Navigation className="w-4 h-4" />
-          </button>
+          <div className="mt-3 text-primary text-xs font-bold flex items-center gap-1">
+            Mocambinho I, Teresina - PI <MapPin className="w-4 h-4" />
+          </div>
         </div>
       </div>
     </div>

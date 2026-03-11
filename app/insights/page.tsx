@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight, ChevronLeft, User, Calendar, ArrowRight } from 'lucide-react';
-import NewsletterForm from '@/components/NewsletterForm';
 
 export default async function Insights() {
   const articles = [
@@ -150,19 +149,6 @@ export default async function Insights() {
 
           {/* Sidebar */}
           <aside className="lg:col-span-4 space-y-10">
-            {/* Newsletter Signup */}
-            <div className="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20">
-              <h4 className="text-xl font-bold mb-4 font-serif">Resumos para Profissionais</h4>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mb-6">
-                Receba análises jurídicas semanais e notícias do escritório diretamente na sua caixa de entrada.
-              </p>
-              <NewsletterForm variant="sidebar" />
-              <p className="mt-4 text-[10px] text-slate-400 text-center uppercase tracking-widest leading-relaxed">
-                Ao assinar, você concorda com nossa Política de Privacidade.
-              </p>
-            </div>
-
-            {/* Categories */}
             <div>
               <h4 className="text-lg font-bold border-b border-slate-200 dark:border-slate-800 pb-3 mb-4 font-serif">Áreas</h4>
               <ul className="space-y-1">

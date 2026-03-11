@@ -26,13 +26,4 @@ describe('Insights Page', () => {
         // Since there is no state hooked up to these buttons currently, 
         // we just verify they render and don't cause errors on click
     });
-
-    it('renders the newsletter sidebar form', async () => {
-        const Component = await Insights();
-        render(Component);
-
-        // Verify the newsletter form input and button are present in the sidebar
-        expect(screen.getAllByPlaceholderText(/Endereço de e-mail/i).length).toBeGreaterThan(0);
-        expect(screen.getAllByRole('button', { name: /Inscreva-se Agora/i }).length).toBeGreaterThan(0);
-    });
 });

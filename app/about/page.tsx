@@ -24,7 +24,7 @@ export default function About() {
             Uma Tradição de <span className="text-accent italic">Excelência</span>
           </h1>
           <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed">
-            Por mais de três décadas, o escritório Dayra Oliveira mantém-se como um referencial de integridade, fornecendo orientação jurídica inigualável.
+            Com 2 anos de atuação, o escritório Dayra Oliveira mantém-se como um referencial de integridade, fornecendo orientação jurídica inigualável.
           </p>
         </div>
       </section>
@@ -62,11 +62,6 @@ export default function About() {
                   className="object-cover"
                   referrerPolicy="no-referrer"
                 />
-              </div>
-              <div className="absolute -bottom-10 -left-10 bg-white dark:bg-slate-900 p-8 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 max-w-xs hidden md:block">
-                <div className="text-5xl font-black text-primary font-serif mb-2">30+</div>
-                <div className="text-slate-900 dark:text-white font-bold uppercase tracking-wider text-sm mb-2">Anos de Experiência</div>
-                <p className="text-slate-500 text-sm">Entregando resultados excepcionais em várias áreas de atuação.</p>
               </div>
             </div>
           </div>
@@ -138,16 +133,18 @@ export default function About() {
           <div className="flex justify-center max-w-sm mx-auto">
             {/* Single Lawyer Card */}
             <div className="group cursor-pointer w-full">
-              <div className="aspect-[3/4] rounded-xl overflow-hidden relative mb-6">
+              <a href="https://instagram.com/dayraoliveira.adv" target="_blank" rel="noopener noreferrer" className="block aspect-[3/4] rounded-xl overflow-hidden relative mb-6 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                 <Image
                   src="/images/dayra-nova.jpg.jpeg"
-                  alt="Dayra Oliveira"
+                  alt="Dayra Oliveira no Instagram"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 font-bold uppercase tracking-widest text-sm transition-opacity bg-black/50 px-4 py-2 rounded-full">Ver Instagram</span>
+                </div>
+              </a>
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white font-serif mb-1 text-center">Dayra Oliveira</h3>
               <p className="text-primary font-medium mb-4 text-center">Advogada e Consultora Jurídica</p>
               <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed text-center">

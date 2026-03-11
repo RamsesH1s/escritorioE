@@ -14,20 +14,16 @@ describe('Contact Page', () => {
     it('renders the contact form inputs and buttons', () => {
         render(<Contact />);
 
-        expect(screen.getByPlaceholderText(/John Doe/i)).toBeInTheDocument();
-        // The email field is gone now
-        // Find the select by its label text
+        expect(screen.getByPlaceholderText(/Digite aqui seu nome/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/Qual é o assunto do seu problema/i)).toBeInTheDocument();
         expect(screen.getByPlaceholderText(/Como podemos ajudá-lo\?/i)).toBeInTheDocument();
-
         expect(screen.getByRole('button', { name: /Enviar Mensagem/i })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: /Como Chegar/i })).toBeInTheDocument();
     });
 
     it('allows typing into the form fields', () => {
         render(<Contact />);
 
-        const nameInput = screen.getByPlaceholderText(/John Doe/i);
+        const nameInput = screen.getByPlaceholderText(/Digite aqui seu nome/i);
         const subjectSelect = screen.getByLabelText(/Qual é o assunto do seu problema/i);
         const messageInput = screen.getByPlaceholderText(/Como podemos ajudá-lo\?/i);
 
@@ -40,10 +36,10 @@ describe('Contact Page', () => {
         expect(messageInput).toHaveValue('Test message body');
     });
 
-    it('submits the form successfully', async () => {
+    it('submits the form successfully and opens WhatsApp', async () => {
         render(<Contact />);
 
-        const nameInput = screen.getByPlaceholderText(/John Doe/i);
+        const nameInput = screen.getByPlaceholderText(/Digite aqui seu nome/i);
         const subjectSelect = screen.getByLabelText(/Qual é o assunto do seu problema/i);
         const messageInput = screen.getByPlaceholderText(/Como podemos ajudá-lo\?/i);
         const submitButton = screen.getByRole('button', { name: /Enviar Mensagem/i });

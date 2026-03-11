@@ -2,13 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import dynamicIconImports from 'lucide-react/dynamicIconImports';
 
-const Gavel = dynamic(dynamicIconImports.gavel);
-const Search = dynamic(dynamicIconImports.search);
-const Menu = dynamic(dynamicIconImports.menu);
-const X = dynamic(dynamicIconImports.x);
+import { Gavel, Search, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { MAIN_NAVIGATION, OFFICE_INFO } from '@/lib/constants/navigation';
 
@@ -18,15 +13,24 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-10 py-4 bg-white dark:bg-background-dark sticky top-0 z-50">
       <div className="flex items-center gap-12">
-        <Link href="/" className="flex flex-col gap-0.5" aria-label="Dayra Oliveira">
-          <div className="relative w-48 h-16 md:w-56 md:h-20">
+        <Link href="/" className="flex items-center gap-4 group" aria-label="Dayra Oliveira ADV">
+          <div className="relative w-12 h-12 md:w-14 md:h-14 overflow-hidden rounded-full border border-slate-100 dark:border-slate-800 shadow-sm transition-transform group-hover:scale-105">
             <Image
-              src="/images/logo.png"
-              alt="Dayra Oliveira Advogada e Consultora Jurídica Logo"
+              src="/images/logo2.png.jpeg"
+              alt="Logo"
               fill
-              className="object-contain object-left brightness-0 invert"
+              sizes="(max-width: 768px) 192px, 224px"
+              style={{ objectFit: 'cover' }}
               priority
             />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-white leading-tight">
+              Dayra Oliveira <span className="text-primary">ADV</span>
+            </span>
+            <span className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest leading-none mt-0.5">
+              Advocacia e Consultoria
+            </span>
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-8">

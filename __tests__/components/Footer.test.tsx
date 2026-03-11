@@ -15,10 +15,4 @@ describe('Footer Component', () => {
             expect(screen.getByRole('link', { name: new RegExp(link.label, 'i') })).toBeInTheDocument();
         });
     });
-
-    it('renders a newsletter subscription input', () => {
-        render(<Footer />);
-        expect(screen.getByPlaceholderText(/Endereço de e-mail/i)).toBeInTheDocument();
-        expect(screen.getByRole('button')).toBeInTheDocument(); // Send button
-    });
 });
