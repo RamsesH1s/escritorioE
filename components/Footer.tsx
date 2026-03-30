@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-slate-900 text-slate-300 py-16 px-10 border-t border-slate-800">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
         <div className="flex flex-col gap-4">
-          <Link href="/" className="flex items-center gap-3 group" aria-label="Dayra Oliveira ADV">
+          <Link href="/" className="flex items-center gap-3 group" aria-label="Dayra Oliveira">
             <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full">
               <Image
                 src="/images/logo2.png.jpeg"
@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </div>
             <span className="text-xl font-serif font-bold text-white">
-              Dayra Oliveira <span className="text-accent">ADV</span>
+              Dayra Oliveira
             </span>
           </Link>
           <p className="text-sm leading-relaxed text-slate-400 mt-2">

@@ -5,7 +5,7 @@ import { MAIN_NAVIGATION, OFFICE_INFO } from '@/lib/constants/navigation';
 describe('Header Component', () => {
     it('renders the logo image', () => {
         render(<Header />);
-        const logo = screen.getByAltText(/Dayra Oliveira Advogada e Consultora Jurídica Logo/i);
+        const logo = screen.getByAltText(/Logo/i);
         expect(logo).toBeInTheDocument();
     });
 

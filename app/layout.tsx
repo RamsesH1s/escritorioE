@@ -16,7 +16,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000'), // Or production URL when deployed
-  title: 'Dayra Oliveira ADV',
+  title: 'Dayra Oliveira',
   description: 'Serviços jurídicos premium com foco em integridade, excelência e a busca incansável pela justiça para nossos clientes.',
   icons: {
     icon: '/favicon.png',
